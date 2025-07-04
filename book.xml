@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<setting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="Object">
+  <flipperVersion type="String">5.0.13</flipperVersion>
+  <keycode type="String">RbGmRgbK3LpEJU5ZGaQMZfUmM2BuYB/3R0TSOtTaAkoG6H6xnoH24ptOgvI9aLFZ1v3u3C5se5GMhMW8d1xKKE7h24Yz7T8m5Mey+gegwrM9LOHPt/hQ4k7HqpirIKhq3ry3i5s4smVvy7MSli4zyd1TXJ5hFYChlMVXNvbq/rdmFVA/un6vkC8ngZNuVP3iaKUnTVIUWVUQYdFaATfkWHQhH5gyQa4S7TO63818gViHHtCC7+BN3CA8IS1OticovEmLvJ9PisQINrqeluMSEPKwkEC8jdnEM/7ztHk5jbEONWqsXP83x8LondVr4PWJCqLviCYEk0jdOhpOglBDer2PWqiVGkh5XEs1rnkxGcMhGdxfT+BngGPpZiopoEJX8adR1Myyxu4=</keycode>
+  <publishDate type="String"><![CDATA[2025/07/03 16:30:53]]></publishDate>
+  <bookInformation type="Object">
+    <bookID type="String"><![CDATA[UFL-11E6D43E]]></bookID>
+    <bookTitle type="String"><![CDATA[総合案内_ベトナム語版_デジパン用]]></bookTitle>
+    <bookComment type="String"><![CDATA[]]></bookComment>
+    <total type="Number">52</total>
+    <maxMagnification type="Number">4</maxMagnification>
+    <bookDirection type="String">r2l</bookDirection>
+    <startPageSetting type="Number">1</startPageSetting>
+    <allowPrint type="Boolean">true</allowPrint>
+    <allowMemo type="Boolean">false</allowMemo>
+    <pageWidth type="Number">685</pageWidth>
+    <pageHeight type="Number">900</pageHeight>
+    <sliceWidth type="Number">400</sliceWidth>
+    <sliceHeight type="Number">400</sliceHeight>
+    <data type="String"><![CDATA[MCN1N772KVDLW,MCN1N77QGFBOQ,MCN1N78H1U9V6,MCN1N78OFW3RF,MCN1N79MVTFYH,MCN1N79X6JRXC,MCN1N7A2N8OVM,MCN1N7BK9K5AF,MCN1N7BO99A7T,MCN1N7YSZFYQB,MCN1N7YYUR7L0,MCN1N7Z5QD6KE,MCN1N7ZAPW59E,MCN1N7ZGHKCZT,MCN1N7ZLVGDRB,MCN1N7ZPBHF1O,MCN1N800I1LM8,MCN1N8056E9UP,MCN1N808E7KFO,MCN1N8H6CDRZN,MCN1N8HCN8DO7,MCN1N8HPTPVK5,MCN1N8HTZ01CT,MCN1N8HVXR2D6,MCN1N8HYNH8OA,MCN1N8I4R24VH,MCN1N8I7HYPGS,MCN1N8IAXO3IO,MCN1N8IGS2NO7,MCN1N8ZIN20QX,MCN1N8ZN1SD7Y,MCN1N8ZQV97P6,MCN1N90CPMCO6,MCN1N90JIY1KL,MCN1N90MO8KUF,MCN1N90RBF6N9,MCN1N90UJXUO0,MCN1N90YSZWR7,MCN1N9132VPWZ,MCN1N9GQA2AZ3,MCN1N9GVCJEJR,MCN1N9H1YKJ7B,MCN1N9H4V2W0W,MCN1N9H9E882J,MCN1N9HD9LXCS,MCN1N9HH7B83W,MCN1N9HLDY527,MCN1N9HRVQTYW,MCN1N9HUU1O5G,MCN1N9VU659U2,MCN1N9VZJ8O78,MCN1N9W242B3J]]></data>
+    <label type="String"><![CDATA[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]]></label>
+    <labelDisplay type="Boolean">true</labelDisplay>
+    <shadowDisplay type="Boolean">true</shadowDisplay>
+    <thicknessDisplay type="Boolean">true</thicknessDisplay>
+    <speed type="String">0.5</speed>
+    <sound type="Boolean">true</sound>
+  </bookInformation>
+  <skinOption htmlSkinType="default">
+    <visualIndex label="label" visible="false" init="close" />
+    <textIndex label="label" treeOpen="false" visible="true" init="close" />
+    <fusenIndex label="label" visible="false" init="close" />
+    <textSearch label="label" visible="true" mode="glyph" />
+    <pdf visible="false" type="book" />
+    <url dispUrl="" visible="false" />
+    <embedHtml url="../index.html" visible="false" />
+    <help visible="false" />
+    <pageIndicate total="0" format="2" visible="true" />
+    <textRectangularSelect visible="false" />
+    <dynamicSizing visible="true" />
+    <twitter tags="" timeline="false" />
+    <googleAnalytics visible="false" key="" type="" />
+    <sns>
+      <twitter visible="false" />
+      <mail visible="false" />
+      <line visible="false" />
+    </sns>
+    <contentPasswordHash></contentPasswordHash>
+    <printOption multiplePagesPrint="false" />
+    <changeMemoVisible visible="false" />
+    <weblio visible="false" />
+  </skinOption>
+  <makeroption>
+    <scormScoreType>normal</scormScoreType>
+    <isOnlineStorage>false</isOnlineStorage>
+  </makeroption>
+  <html5setting>
+    <language><![CDATA[ja]]></language>
+    <flipButton enabled="true" />
+    <header enabled="false" bgColor="" target="">
+      <url><![CDATA[]]></url>
+    </header>
+    <fusen>
+      <bgColor>
+        <color><![CDATA[#ffffff]]></color>
+        <color><![CDATA[#fdee74]]></color>
+        <color><![CDATA[#fcb4cc]]></color>
+        <color><![CDATA[#93ccea]]></color>
+        <color><![CDATA[#d7fdcd]]></color>
+      </bgColor>
+    </fusen>
+    <tegaki>
+      <penColor>
+        <color><![CDATA[#000000]]></color>
+        <color><![CDATA[#DD1616]]></color>
+        <color><![CDATA[#DDB516]]></color>
+        <color><![CDATA[#4AB086]]></color>
+        <color><![CDATA[#2D6DDD]]></color>
+      </penColor>
+      <penThickness>
+        <thickness><![CDATA[1]]></thickness>
+        <thickness><![CDATA[8]]></thickness>
+        <thickness><![CDATA[15]]></thickness>
+      </penThickness>
+      <penThicknessClass>
+        <class><![CDATA[small]]></class>
+        <class><![CDATA[medium]]></class>
+        <class><![CDATA[large]]></class>
+      </penThicknessClass>
+    </tegaki>
+    <mobile>
+      <closeButton type="default" />
+      <homepageButton enabled="false" target="_blank">
+        <url><![CDATA[https://www.logosware.com/]]></url>
+      </homepageButton>
+    </mobile>
+  </html5setting>
+</setting>

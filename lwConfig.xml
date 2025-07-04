@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lwConfig>
+  <type>FLIPPERU2</type>
+  <version><![CDATA[5.0.13]]></version>
+  <title><![CDATA[総合案内_ベトナム語版_デジパン用]]></title>
+  <file><![CDATA[index.html]]></file>
+  <thumbnail>
+    <content><![CDATA[thumbnail.jpg]]></content>
+  </thumbnail>
+</lwConfig>

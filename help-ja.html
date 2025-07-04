@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<title>総合案内_ベトナム語版_デジパン用</title>
+
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache, no-store">
+<meta http-equiv="expires" content="0">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link id="skin-css" rel="stylesheet" href="./html5/css/skin.css?c=20250703163053" type="text/css" media="screen">
+<link id="theme-css" rel="stylesheet" href="./html5/css/theme.css?c=20250703163053" type="text/css" media="screen">
+<link id="design-css" rel="stylesheet" href="./html5/css/design.css?c=20250703163053" type="text/css" media="screen">
+
+<script src="./html5/js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./html5/js/lwUACheck.js" type="text/javascript" charset="utf-8"></script>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background: #fff;
+}
+
+.main {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.main h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.main .content-image {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.main .content-image img {
+    border: 1px solid #ddd;
+    height: 200px;
+}
+
+.main .content-button {
+    margin: auto;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 16px 62px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+a.button-blue {
+    background-color: #6496c8;
+    color: white;
+}
+
+a.button-blue:hover {
+    background-color: #346392;
+}
+
+a.button-blue:active {
+    background-color: #346392;
+}
+
+.help {
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+
+#footer-color {
+    width: 600px;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 768px) {
+    #footer-color {
+        width: 600px;
+    }
+}
+
+
+@media screen and (max-width: 667px) {
+    #footer-color {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    #footer-color {
+        width: 548px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #footer-color {
+        width: 460px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #footer-color {
+        width: 355px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #footer-color {
+        width: 300px;
+    }
+}
+
+#footer {
+    box-shadow: none;
+    height: auto;
+    text-align: left;
+}
+
+.btn {
+    cursor: default;
+}
+
+
+.footer-list .box:first-child {
+    padding-left: 10px;
+}
+
+.footer-list > .box {
+    display: block;
+    padding: 10px;
+    margin: 0;
+}
+
+.footer-list .help-area {
+    display: none;
+}
+
+.footer-list .info {
+    background-color: #fff;
+    padding: 10px 10px 20px 10px;
+    border-radius: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-list .footer-help-title {
+    color: #333;
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+.footer-list .footer-help-title h5 {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.footer-list .info .subtitle {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+}
+
+.footer-list .info .title {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.footer-list .info .description {
+}
+
+.footer-list .panel {
+    position: relative;
+}
+
+.mobile .footer-list .panel {
+    padding: 0;
+}
+
+.slidemenu, .slidemenu-m {
+    position: relative;
+}
+
+.slidemenu-m {
+    height: initial;
+}
+
+.slidemenu.other {
+    width: 0;
+    top: 0;
+    box-shadow: none;
+    padding: 10px 0;
+}
+
+#list-slidemenu.other .slidemenu-titlebar {
+    box-shadow: none;
+}
+
+#list-slidemenu.slidemenu.other .slidemenu-titlebar {
+    margin-left: 10px;
+}
+
+.slidemenu-m.other {
+    top: 0;
+    padding: 0;
+}
+
+.slidemenu.default {
+    top: 0;
+    width: 100%;
+}
+
+.slidemenu-m.default {
+    padding: 0;
+}
+
+
+.slidemenu.other .segmented {
+    display: flex;
+}
+
+.slidemenu.other .segmented label {
+    margin-right: 10px
+}
+
+.slidemenu.default .slidemenu-titlebar {
+    width: 100%;
+    display: flex;
+}
+
+.slidemenu-m .slidemenu-titlebar {
+    width: 100%;
+    display: flex;
+}
+
+.slidemenu-m .slidemenu-titlebar-inner {
+    padding-left: 10px;
+}
+
+
+.slidemenu .segmented, .slidemenu-m .segmented {
+    visibility: visible;
+}
+
+.setting-list-btn {
+    cursor: default;
+}
+
+.main {
+    display: none;
+}
+
+.help {
+    visibility: hidden;
+}
+</style>
+
+<script>
+$(function(){
+    // 旧PDFのビューにしたいときは true そうでなければ false
+    var isPDFList = false;
+
+    var bookpath = './';
+    var uaCheck = new lwUACheck();
+    var c = new Date/1000|0;
+    var allowMemo;
+    var allowPrint;
+    var showlink = true;
+
+    if (uaCheck.isMobile) {
+        $('#skin-css').replaceWith('<link id="skin-css" rel="stylesheet" href="' + bookpath + 'html5/css/skin-m.css?t=' + c + '"></link>');
+        $('#theme-css').replaceWith('<link id="theme-css" rel="stylesheet" href="' + bookpath + 'html5/css/theme-m.css?t=' + c + '"></link>');
+        $('#design-css').replaceWith('<link id="design-css" rel="stylesheet" href="' + bookpath + 'html5/css/design-m.css?t=' + c + '"></link>');
+    }
+
+    var hs = window.location.hash;
+    var p = hs.substr(1)
+    // if(Number(p)>0) hs = "#page="+p;
+    var sr = window.location.search;
+    if(hs=="") hs = "#page=1";
+
+    // ?link=off
+    if (sr.indexOf('link=off') !== -1) {
+        sr = sr.replace('link=off', '')
+        if (sr === '?') sr = ''
+        showlink = false
+    }
+    $('#openlink').attr('href', bookpath + 'index.html' + sr + hs);
+
+    $.Deferred().resolve()
+        .then(function() {
+            // book.xml load
+            return $.ajax({
+                type: 'GET',
+                url: bookpath + 'book.xml?c=' + c,
+                dataType: 'xml',
+            });
+        })
+        .then(function(xml) {
+            // book.xml load complete
+            var dataList = $(xml).find('bookInformation').find('data').text().split(',')
+            $('#thumbnail').attr('src', bookpath + 'page' + dataList[0] + '/thumbnail.jpg');
+
+            $(xml).find('bookTitle').each(function(){
+                $('#book-title').text($(this).text())
+            });
+
+            // 印刷
+            allowPrint = false
+            $(xml).find('allowPrint').each(function(){
+                allowPrint = $(this).text().toLowerCase() === 'true';
+            });
+            if (allowPrint) {
+                if (uaCheck.isMobile) {
+                    $('.setting-print-area').show()
+                } else {
+                    $('.setting-print-area').remove()
+                    $('.print-area').show()
+                }
+            } else {
+              $('.setting-print-area').remove()
+            }
+
+            // ペン・付箋
+            allowMemo = false
+            $(xml).find('allowMemo').each(function(){
+                allowMemo = $(this).text().toLowerCase() === 'true';
+            });
+            if (allowMemo) {
+                $('.fusen-area').show()
+                $('.tegaki-area').show()
+            }
+
+            // 旧 skinoption.xml
+            var skinName = ''
+            $(xml).find('skinOption').each(function(){
+                skinName = $(this).attr('htmlSkinType')
+            });
+
+            // 検索
+            var textSearch = false
+            $(xml).find('skinOption').find('textSearch').each(function(){
+                textSearch = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            if (textSearch) {
+                $('.search-area').show()
+                if (uaCheck.isMobile) {
+                    $('#search').remove()
+                } else {
+                    $('#searchview-btn').remove()
+                }
+            }
+
+            // 共有
+            var url = false
+            $(xml).find('skinOption').find('url').each(function(){
+                url = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            var embedHtml = false
+            $(xml).find('skinOption').find('embedHtml').each(function(){
+                embedHtml = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            if (uaCheck.isMobile) {
+                if (url) {
+                    $('.share-area').show()
+                }
+            } else {
+                if (url || embedHtml) {
+                    $('.share-area').show()
+                }
+            }
+
+            // テキスト
+            var textRectangularSelect = false
+            $(xml).find('skinOption').find('textRectangularSelect').each(function(){
+                textRectangularSelect = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            if (!uaCheck.isMobile && textRectangularSelect) {
+                $('.text-area').show()
+            }
+
+            // 目次
+            var textIndex = false
+            $(xml).find('skinOption').find('textIndex').each(function(){
+                textIndex = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            if (textIndex) {
+                $('.textindex-area').show()
+            } else {
+                $('.textindex-area').remove()
+            }
+
+            // ページ一覧
+            var visualIndex = false
+            $(xml).find('skinOption').find('visualIndex').each(function(){
+                visualIndex = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            if (visualIndex) {
+                $('.thumbnail-area').show()
+            } else {
+                $('.thumbnail-area').remove()
+            }
+
+            // 付箋一覧
+            var fusenIndex = false
+            $(xml).find('skinOption').find('fusenIndex').each(function(){
+                fusenIndex = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            if (fusenIndex) {
+                $('.fusenlist-area').show()
+            } else {
+                $('.fusenlist-area').remove()
+            }
+
+            // PDF
+            var pdf = false
+            var pdfType
+            $(xml).find('skinOption').find('pdf').each(function(){
+                pdf = $(this).attr('visible').toLowerCase() === 'true';
+                pdfType = $(this).attr('type');
+            });
+
+            if (pdf) {
+                if (uaCheck.isMobile) {
+                    if (typeof isPDFList !== 'undefined' && isPDFList) {
+                        if (!textIndex && !visualIndex && !fusenIndex && pdfType === 'book') {
+                            $('.pdf-area').remove()
+                            $('.listpdf-area').show()
+                        } else {
+                            $('.pdf-area').show()
+                        }
+                    } else {
+                        $('.pdf-area').remove()
+                        $('.listpdf-area').show()
+                    }
+                } else {
+                    $('.pdf-area').remove()
+                    $('.listpdf-area').show()
+                }
+            } else {
+                $('.pdf-area').remove()
+            }
+
+            // segmented-area
+            var count = 0
+            if (uaCheck.isMobile) {
+                if (textIndex || visualIndex || fusenIndex || pdf) {
+                    $('.segmented-area').show()
+                }
+                count = 0
+                if (textIndex) {
+                    count++
+                }
+                if (visualIndex) {
+                    count++
+                }
+                if (fusenIndex) {
+                    count++
+                }
+                if (pdf) {
+                    count++
+                }
+                if (count < 2) {
+                    $('.segmented-area').hide()
+                }
+            } else {
+                if (textIndex || visualIndex || fusenIndex) {
+                    $('.segmented-area').show()
+                }
+                count = 0
+                if (textIndex) {
+                    count++
+                }
+                if (visualIndex) {
+                    count++
+                }
+                if (fusenIndex) {
+                    count++
+                }
+                if (count < 2) {
+                    $('.segmented-area').hide()
+                }
+            }
+
+            if (uaCheck.isMobile) {
+                if (textIndex || visualIndex || fusenIndex || (pdf && pdfType === 'page' && isPDFList)) {
+                    $('.list-area').show()
+                }
+            } else {
+                if (skinName === 'default' && (textIndex || visualIndex || fusenIndex)) {
+                    $('.list-area').show()
+                }
+            }
+
+            if (uaCheck.isMobile) {
+                $('#list-slidemenu').removeClass('slidemenu')
+                $('#list-slidemenu').addClass('slidemenu-m slidemenu-titlebar-high')
+            }
+
+            if (skinName === 'default') {
+                $('#list-slidemenu').addClass('default')
+            } else {
+                $('#list-slidemenu').addClass('other')
+            }
+
+            // 付箋・手書きを表示する
+            var changeMemoVisible = false
+            $(xml).find('skinOption').find('changeMemoVisible').each(function(){
+                changeMemoVisible = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            if (allowMemo && changeMemoVisible) {
+                $('.setting-tegaki-displayed-area').show()
+            } else {
+                $('.setting-tegaki-displayed-area').remove()
+            }
+
+            // ヘルプ
+            var help = false
+            $(xml).find('skinOption').find('help').each(function(){
+                help = $(this).attr('visible').toLowerCase() === 'true';
+            });
+            if (help) {
+                $('.setting-help-area').show()
+            } else {
+                $('.setting-help-area').remove()
+            }
+
+            if (uaCheck.isMobile) {
+                if (allowPrint || (allowMemo && changeMemoVisible) || help) {
+                    $('.panel-area').show()
+                }
+            } else {
+                if ((allowMemo && changeMemoVisible) || help) {
+                    $('.panel-area').show()
+                }
+            }
+
+            if (uaCheck.isMobile) {
+                $('.help').addClass('mobile')
+                $('.flip-area').hide()
+                $('.zoomin-area').hide()
+                $('.zoomout-area').hide()
+            }
+
+            if ( $('.footer-list > li:visible').length !== 1) {
+                $('.help').css('visibility', 'visible');
+            }
+
+            if (showlink) {
+                $('.main').show();
+            }
+
+            // 旧 html5setting.xml
+            var language;
+            $(xml).find('language').each(function(){
+                language = $(this).text()
+            });
+            // language.xml load
+            var languageUrl;
+            if (language === 'other') {
+                languageUrl = bookpath +'html5custom/language-custom.xml?c=' + c
+            } else {
+                languageUrl = bookpath +'html5/language-' + language + '.xml?c=' + c
+            }
+            return $.ajax({
+                type: 'GET',
+                url: languageUrl,
+                dataType: 'xml',
+            });
+        })
+        .then(function(xml) {
+            // language.xml load complete
+            $(xml).find('text[name=Search]').each(function(){
+                $('#searchview-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=List]').each(function(){
+                $('#list-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=FlipLMax]').each(function(){
+                $('#fliplmax-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=FlipL]').each(function(){
+                $('#flipl-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=FlipR]').each(function(){
+                $('#flipr-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=FlipRMax]').each(function(){
+                $('#fliprmax-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Zoomin]').each(function(){
+                $('#zoomin-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Zoomout]').each(function(){
+                $('#zoomout-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Print]').each(function(){
+                $('#print-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Pdf]').each(function(){
+                $('#listpdf-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Share]').each(function(){
+                $('#share-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Text]').each(function(){
+                $('#text-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Fusen]').each(function(){
+                $('#fusen-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Tegaki]').each(function(){
+                $('#tegaki-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Textindex]').each(function(){
+                $('#textindex-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Thumbnail]').each(function(){
+                $('#thumbnail-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=FusenList]').each(function(){
+                $('#fusenlist-btn').find('.btn-label').text($(this).text())
+            });
+
+            $(xml).find('text[name=FuseTegakiLayerShow]').each(function(){
+                $('#setting-tegaki-displayed-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Print]').each(function(){
+                $('#setting-print-btn').find('.btn-label').text($(this).text())
+            });
+            $(xml).find('text[name=Help]').each(function(){
+                $('#setting-help-btn').find('.btn-label').text($(this).text())
+            });
+        });
+});
+</script>
+</head>
+<body>
+<!--version 5.0.13 -->
+<div>
+
+    <div class="main">
+        <h2 id="book-title"></h2>
+        <div class="content-image">
+            <img id="thumbnail" src="" alt="thumnail">
+        </div>
+        <div class="content-button">
+            <a id="openlink" class="button button-blue" href="" target="_self">ブックを開く</a>
+        </div>
+    </div>
+
+    <div id="footer" class="help">
+
+        <ul id="footer-color" class="footer-list">
+
+            <li class="footer-help-title">
+                <h5>操作方法</h5>
+            </li>
+
+            <li class="box help-area search-area">
+                <div id="search" class="box">
+                    <div id="searchform">
+                        <form onsubmit="return false">
+                            <input id="search-keyword" title="search keyword" type="text" value="" readonly="readonly" disabled="disabled">
+                            <div id="search-btn" class="btn-bg footer-btn">
+                                <div class="btn color-btn">
+                                    <span class="icon btn-icon"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="searchview-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="info help-area search-area">
+                <div class="title">[検索ボタン]</div>
+                <div class="description">任意のキーワードを入力してブック内を検索できます。</div>
+            </li>
+
+            <li class="box help-area list-area">
+                <div id="list-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info help-area list-area">
+                <div class="title">[目次ボタン]</div>
+                <div class="description">目次を表示します。</div>
+            </li>
+
+            <li class="box flip-area">
+                <ul>
+                    <li id="fliplmax" class="box">
+                        <div id="fliplmax-btn" class="btn-bg footer-btn">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="flipl" class="box">
+                        <div id="flipl-btn" class="btn-bg footer-btn">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="flippage" class="box">
+                        <form onsubmit="return false">
+                            <input id="flippage-word" type="text" value="" title="1" readonly="readonly" disabled="disabled">
+                        </form>
+                    </li>
+
+                    <li id="flipr" class="box">
+                        <div id="flipr-btn" class="btn-bg footer-btn">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="fliprmax" class="box">
+                        <div id="fliprmax-btn" class="btn-bg footer-btn">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="info flip-area">
+                <div class="title">[ページ移動ボタン]</div>
+                <div class="description">三角アイコンが指す方向のページをめくります。<br>&laquo; や &raquo; のボタンは、三角アイコンが指す方向の最終ページをめくります。</div>
+            </li>
+
+            <li class="box zoomin-area">
+                <div id="zoomin-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info zoomin-area">
+                <div class="title">[拡大ボタン]</div>
+                <div class="description">ページをウィンドウいっぱいに拡大して表示します。</div>
+            </li>
+
+            <li class="box zoomout-area">
+                <div id="zoomout-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info zoomout-area">
+                <div class="title">[縮小ボタン]</div>
+                <div class="description">拡大時のみ使用可能。ページを元のサイズまで縮小して表示します。</div>
+            </li>
+
+            <li class="box help-area print-area">
+                <div id="print-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info help-area print-area">
+                <div class="title">[印刷ボタン]</div>
+                <div class="description">印刷したいページを選べます。書き込んだ線・付箋を含めて印刷するかどうか選べます。</div>
+            </li>
+
+            <li class="box help-area listpdf-area">
+                <div id="listpdf">
+                    <div id="listpdf-btn" class="btn-bg footer-btn">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="info help-area listpdf-area">
+                <div class="title">[PDFボタン]</div>
+                <div class="description">PDFファイルを開きます。</div>
+            </li>
+
+            <li class="box help-area share-area">
+                <div id="share-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info help-area share-area">
+                <div class="title">[共有ボタン]</div>
+                <div class="description">現在のページ、または範囲を共有できます。</div>
+            </li>
+
+            <li class="box help-area text-area">
+                <div id="text-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info help-area text-area">
+                <div class="title">[テキストボタン]</div>
+                <div class="description">ページ上でドラッグした範囲のテキストを抽出できます。</div>
+            </li>
+
+            <li class="box help-area fusen-area">
+                <div id="fusen-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info help-area fusen-area">
+                <div class="title">[付箋ボタン]</div>
+                <div class="description">ページ上に付箋が貼られます。貼った付箋には、文章を入力できます。詳細設定で、付箋の色が選べます。</div>
+            </li>
+
+            <li class="box help-area tegaki-area">
+                <div id="tegaki-btn" class="btn-bg footer-btn">
+                    <div class="btn color-btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label"></span>
+                    </div>
+                </div>
+            </li>
+            <li class="info help-area tegaki-area">
+                <div class="title">[ペンボタン]</div>
+                <div class="description">ページ上に線が描けます。詳細設定で、線の色・太さが選べます。</div>
+            </li>
+
+            <li id="list-slidemenu" class="box help-area segmented-area slidemenu">
+                <div class="slidemenu-titlebar">
+                    <div class="slidemenu-titlebar-inner">
+                        <div class="segmented">
+                            <label id="textindex-btn" class="textindex-area" data-type="textindex">
+                                <span class="btn-bg segmented-btn">
+                                     <div class="btn color-btn">
+                                        <span class="icon btn-icon"></span>
+                                        <span class="btn-label"></span>
+                                     </div>
+                                </span>
+                            </label>
+                            <label id="thumbnail-btn" class="thumbnail-area" data-type="thumbnail">
+                                <span class="btn-bg segmented-btn">
+                                     <div class="btn color-btn">
+                                         <span class="icon btn-icon"></span>
+                                        <span class="btn-label"></span>
+                                     </div>
+                                </span>
+                            </label>
+                            <label id="pdf-btn" class="pdf-area" data-type="pdf">
+                                <span class="btn-bg segmented-btn">
+                                    <div class="btn color-btn">
+                                        <span class="icon btn-icon"></span>
+                                        <span class="btn-label"></span>
+                                    </div>
+                                </span>
+                            </label>
+                            <label id="fusenlist-btn" class="fusenlist-area" data-type="fusen">
+                                <span class="btn-bg segmented-btn">
+                                     <div class="btn color-btn">
+                                        <span class="icon btn-icon"></span>
+                                        <span class="btn-label"></span>
+                                     </div>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="info help-area segmented-area">
+                <div class="subtitle">目次ボタンをクリックした後の画面</div>
+                <div class="help-area textindex-area">
+                    <div class="title">[目次]</div>
+                    <div class="description">テキストの目次を表示します。</div>
+                </div>
+                <div class="help-area thumbnail-area">
+                    <div class="title">[ページ一覧]</div>
+                    <div class="description">ページの画像を一覧表示します。</div>
+                </div>
+                <div class="help-area pdf-area">
+                    <div class="title">[PDFボタン]</div>
+                    <div class="description">PDFファイルを開きます。</div>
+                </div>
+                <div class="help-area fusenlist-area">
+                    <div class="title">[付箋一覧]</div>
+                    <div class="description">貼った付箋を一覧表示します。</div>
+                </div>
+            </li>
+
+            <li class="box help-area panel panel-area slidemenu-m">
+                <div id="setting-tegaki-displayed-btn" class="setting-list-btn setting-tegaki-displayed-area">
+                    <div class="btn color-item">
+                        
+                        <span class="btn-label">
+                            <span></span>
+                        </span>
+                    </div>
+                </div>
+                <div id="setting-print-btn" class="setting-list-btn setting-print-area">
+                    <div class="btn color-item">
+                        
+                        <span class="btn-label">
+                            <span></span>
+                        </span>
+                    </div>
+                </div>
+
+                <div id="setting-help-btn" class="setting-list-btn setting-help-area">
+                    <div class="btn color-item">
+                        
+                        <span class="btn-label">
+                            <span class="btn-label"></span>
+                        </span>
+                    </div>
+                </div>
+            </li>
+            <li class="info help-area panel-area">
+                <div class="subtitle">メニューボタンをクリックした後の画面</div>
+                <div class="setting-tegaki-displayed-area">
+                    <div class="title">[付箋・手書きを表示する]</div>
+                    <div class="description">ブックに書き込んだ手書きメモや付箋の表示・非表示が切り替えられます。</div>
+                </div>
+
+                <div class="setting-print-area">
+                    <div class="title">[印刷]</div>
+                    <div class="description">印刷したいページを選べます。書き込んだ線・付箋を含めて印刷するかどうか選べます。</div>
+                </div>
+
+                <div class="setting-help-area">
+                    <div class="title">[ヘルプ]</div>
+                    <div class="description">コントローラーの各ボタンについて詳しく説明しています。</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache, no-store">
+<meta http-equiv="expires" content="0">
+
+<title>総合案内_ベトナム語版_デジパン用</title>
+
+
+<script type="text/javascript" src="flipper3js/tcoredirector.js"></script>
+<script type="text/javascript" src="flipper3js/redirector.js"></script>
+
+
+
+<link rel="stylesheet" href="./html5/css/skin.css?c=20250703163053" type="text/css" media="screen">
+<link rel="stylesheet" href="./html5/css/print.css?c=20250703163053" type="text/css" media="print">
+<link rel="stylesheet" href="./html5/css/theme.css?c=20250703163053" type="text/css" media="screen">
+<link rel="stylesheet" href="./html5/css/design.css?c=20250703163053" type="text/css" media="screen">
+<!--
+<link rel="stylesheet" href="./html5custom/css/custom.css?c=20250703163053" type="text/css" media="screen">
+-->
+
+
+
+
+<script src="./html5/js/lwUACheck.js" type="text/javascript" charset="utf-8"></script>
+<script src="./html5/js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="./html5/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./html5/js/jquery.xml2json.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="./html5/js/rgbcolor.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="./html5/extensionlinkhandler.js" type="text/javascript" charset="utf-8"></script>
+<script src="./html5/pagechangehandler.js" type="text/javascript" charset="utf-8"></script>
+
+<script language="JavaScript" type="text/javascript">
+    var isPDFList = false;
+    var isLibra = false;
+    var scormScoreKind = "";
+    function checkScorm() {
+        if (scormScoreKind === '1.2' || scormScoreKind === '2004' || scormScoreKind === 'score'){
+            document.write("<scr" + "ipt type='text/javascript' src='./html5/js/sscontrol.min.js' charset='utf-8'></scr" + "ipt>");
+        }
+    }
+
+    function scormInitilaized(){
+        if (scormScoreKind === '1.2') {
+            scormSetValue("cmi.core.lesson_status", "completed");
+            SCOCommit();
+        } else if (scormScoreKind === '2004') {
+            scormSetValue("cmi.success_status", "passed");
+            scormSetValue("cmi.completion_status", "completed");
+            SCOCommit();
+        }
+    }
+
+    function scormSetValue(model, value) {
+        var result = scormCommand("LMSSetValue", model + "," + value);
+        return result;
+    }
+
+    checkScorm();
+</script>
+
+
+<style>
+    [v-cloak] { display:none }
+</style>
+
+
+<script>
+$(function(){
+});
+</script>
+</head>
+<body>
+<!--version 5.0.13 -->
+
+<p class="skip-nav"><a href="#flipper-app" class="skip-link">このページの本文へ</a></p>
+
+
+<div id="flipper-app" class="header-space footer-space leftside-space rightside-space" bookpath="./" imagepath="./">
+    <div id="flipper-component">
+        <component v-bind:is="view" v-ref:view></component>
+    </div>
+</div>
+
+
+<div id="skin" v-cloak>
+
+    <div id="header" class="noprintpage">
+        <div id="header-color">
+            <!--
+            <iframe title="header" width="100%" height="100%" src="./html5header.html?c=20250703163053" hspace="0" vspace="0" marginheight="0" marginwidth="0" border="0" frameborder="0" framespacing="0" scrolling="no"></iframe>
+            -->
+        </div>
+    </div>
+
+    <div id="leftside" class="noprintpage sidebar header-space footer-space">
+        
+    </div>
+
+    <div id="rightside" class="noprintpage sidebar header-space footer-space">
+        
+    </div>
+
+    <div id="bottomside" class="noprintpage">
+        
+    </div>
+
+    <div id="footer" class="noprintpage bottomside-space">
+        <div id="footer-color">
+            <ul id="footer-mainlist" class="footer-list" v-bind:style="{visibility:isSkinInitialized ? 'visible' : 'hidden'}" v-show="isToolbarOpen">
+                <li id="search" class="box" v-if="soSearch">
+                    <div id="searchform">
+                        
+                        <form onsubmit="return false">
+                            <input id="search-keyword" title="search keyword" type="text" value="" v-model="searchString" v-on:keyup.enter="searchText" @focus="setTextInputFocus">
+                            <div id="search-clear-outer" v-on:click="searchClear" v-show="searchString.length">
+                                <div id="search-clear" class="icon"></div>
+                            </div>
+                            
+                            
+                            <div id="search-btn" class="btn-bg footer-btn" v-on:click="searchText" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                                <div class="btn color-btn">
+                                    <span class="icon btn-icon"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+                <li id="list" class="box" v-if="showList && !showListTab">
+                    <div id="list-btn" class="btn-bg footer-btn" v-on:click="onListButtonClick" v-bind:class="{active:isListOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.List}}</span>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="fliplmax" class="box" v-if="bookViewLength>1">
+                    <div id="fliplmax-btn" class="btn-bg footer-btn" value="filpL" v-on:click="flipLMax" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-bind:class="{disabled:visibilityFooterFlipL == 'hidden'}">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.FlipLMax}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="flipl" class="box" v-if="bookViewLength>1">
+                    <div id="flipl-btn" class="btn-bg footer-btn" value="filpL" v-on:click="flipL" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-bind:class="{disabled:visibilityFooterFlipL == 'hidden'}">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.FlipL}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="flippage" class="box" v-if="soPageIndicate">
+                    <form onsubmit="return false">
+                        <input @focus="setTextInputFocus" id="flippage-word" type="text" value="" v-model="pageIndicateValue" title="{{activePageLabel}}" v-on:keyup.enter="gotoTargetLabel">
+                    </form>
+                </li>
+                <li id="flipr" class="box" v-if="bookViewLength>1">
+                    <div id="flipr-btn" class="btn-bg footer-btn" value="filpR" v-on:click="flipR" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-bind:class="{disabled:visibilityFooterFlipR == 'hidden'}">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.FlipR}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="fliprmax" class="box" v-if="bookViewLength>1">
+                    <div id="fliprmax-btn" class="btn-bg footer-btn" value="filpR" v-on:click="flipRMax" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-bind:class="{disabled:visibilityFooterFlipR == 'hidden'}">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.FlipRMax}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="zoomin" class="box" v-if="true">
+                    <div id="zoomin-btn" class="btn-bg footer-btn" value="zoomin" v-on:click="zoomin" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-bind:class="{disabled:isMaxScale}">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Zoomin}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="zoomout" class="box" v-if="true">
+                    <div id="zoomout-btn" class="btn-bg footer-btn" value="zoomout" v-on:click="zoomout" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-bind:class="{disabled:isMinScale}">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Zoomout}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="print" class="box" v-if="allowPrint">
+                    <div id="print-btn" class="btn-bg footer-btn" value="print" v-on:click="print" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Print}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="listpdf" class="box" v-if="soPdf">
+                    <div id="listpdf-btn" class="btn-bg footer-btn" v-on:click="onPdfButtonClick" v-bind:class="{active:isPdfOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Pdf}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="share" class="box" v-if="soShare || soEmbedHtml">
+                    <div id="share-btn" class="btn-bg footer-btn" v-on:click="onShareButtonClick" v-bind:class="{active:isShareOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Share}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="text" class="box" v-if="soTextSelect">
+                    <div id="text-btn" class="btn-bg footer-btn" v-on:click="onTextButtonClick" v-bind:class="{active:isTextOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Text}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="fusen" class="box" v-if="allowMemo">
+                    <div id="fusen-btn" class="btn-bg footer-btn" v-on:click="onFusenButtonClick" v-bind:class="{active:isFusenOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Fusen}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="tegaki" class="box" v-if="allowMemo">
+                    <div id="tegaki-btn" class="btn-bg footer-btn" v-on:click="onTegakiButtonClick" v-bind:class="{active:isTegakiOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Tegaki}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul id="footer-tegakilist" class="footer-list" v-if="isTegakiOpen && !isToolbarOpen">
+
+                <li id="tegaki-color" class="box">
+                    <div id="tegaki-color-btn" class="btn-bg footer-btn" v-on:click="onTegakiColorButtonClick" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn">
+                            <span class="btn-icon">
+                                <span class="color-box-bg">
+                                    <span class="color-box">
+                                        <span class="thickness" v-bind:class="tegakiData.thicknessType" v-bind:style="{backgroundColor: tegakiData.color }"></span>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li id="tegaki-pen" class="box">
+                    <div id="tegaki-pen-btn" class="btn-bg footer-btn" v-on:click="onTegakiPenButtonClick" v-bind:class="{active:!isTegakiEraserLineOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="btn-icon icon" v-bind:class="{curve:tegakiData.stroke == 'curve', straightline:tegakiData.stroke == 'straightline'}"></span>
+                            <span class="btn-label" v-show="tegakiData.stroke == 'straightline'"></span>
+                            <span class="btn-label" v-show="tegakiData.stroke != 'straightline'"></span>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="tegaki-eraser-line" class="box">
+                    <div id="tegaki-eraser-line-btn" class="btn-bg footer-btn" v-on:click="onTegakiEraserLineButtonClick" v-bind:class="{active:isTegakiEraserLineOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label"></span>
+                        </div>
+                    </div>
+                </li>
+                <li id="tegaki-eraser-all" class="box">
+                    <div id="tegaki-eraser-all-btn" class="btn-bg footer-btn" v-on:click="onTegakiEraserAllButtonClick" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label"></span>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="tegakilist-close" class="box">
+                    <div id="tegakilist-close-btn" class="btn-bg footer-btn" v-on:click="onClickTegakiClose" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div transition="slide" id="list-slidemenu" class="noprintpage slidemenu header-space footer-space leftside-space" v-show="isListOpen" v-bind:class="{'slidemenu-titlebar-high':showListSegmented, 'show-segmented':showListSegmented}">
+        <div class="slidemenu-titlebar" v-if="showList">
+            <div class="slidemenu-titlebar-inner">
+                <div class="segmented">
+                    <label id="textindex-btn" data-type="textindex" v-if="soTextIndex">
+                        <span class="btn-bg segmented-btn" v-on:click="onTextIndexButtonClick" v-bind:class="{active:isTextIndexOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                             <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label">{{words.Textindex}}</span>
+                             </div>
+                        </span>
+                    </label>
+                    <label id="thumbnail-btn" data-type="thumbnail" v-if="soVisualIndex">
+                        <span class="btn-bg segmented-btn" v-on:click="onThumbnailButtonClick" v-bind:class="{active:isThumbnailOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                             <div class="btn color-btn">
+                                 <span class="icon btn-icon"></span>
+                                <span class="btn-label">{{words.Thumbnail}}</span>
+                             </div>
+                        </span>
+                    </label>
+                    <label id="fusenlist-btn" data-type="fusen" v-if="soFusenIndex">
+                        <span class="btn-bg segmented-btn" v-on:click="onFusenListButtonClick" v-bind:class="{active:isFusenListOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                             <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label">{{words.FusenList}}</span>
+                             </div>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="btn-bg slidemenu-close-btn" v-if="showList" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-on:click="isListOpen = false">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label">{{words.Close}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            
+            <script type="text/x-template" id="visual-index">
+                <li class="tile slide" v-if="$root.isChirashi">
+                    <div class="tile-inner slide">
+                        <div class="tile-content loading" v-touch:tap="onClick">
+                            <div class="tile-image" v-bind:class="{in:isRollOverPage}" v-on:mouseover="onRollOverPage" v-on:mouseout="onRollOutPage">
+                                <img class="thumbnail lazy" v-bind:data-original="model.path" src="./html5/images/transparent.gif" alt="thumbnail image">
+                                <img v-if="isCheck" class="check" src="./html5/images/scormscorecheck.png" alt="scorm check image">
+
+                                <div class="tile-over-icon" v-show="$root.isPdfOpen || isRollOverL" v-if="model.page>0 && $root.soPdfType == 'page'" >
+                                    <a v-show="!$root.isPdfOpen"
+                                       class="tile-btn pagepdf-btn btn-bg"
+                                       v-bind:class="{'large':$root.isPdfOpen}"
+                                       href="{{$root.bookpath}}pdf/{{model.page}}.pdf"
+                                       target="_blank"
+                                       v-on:mouseover="$root.buttonMouseOver($event)"
+                                       v-on:mouseleave="$root.buttonMouseLeave($event)">
+                                        <div class="color-item">
+                                            <span class="icon"></span>
+                                        </div>
+                                    </a>
+                                    <div v-show="$root.isPdfOpen"
+                                         class="tile-btn pagepdf-btn btn-bg"
+                                         v-bind:class="{'large':$root.isPdfOpen}">
+                                        <div class="color-item">
+                                            <span class="icon"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile-label" v-bind:style="{visibility:$root.soVisualIndexLabel ? 'visible' : 'hidden'}" title="{{model.label}}">{{model.label}}</div>
+                        </div>
+                    </div>
+                </li>
+
+                <li v-else>
+                    <div class="tile left">
+                        <div class="tile-content loading" v-on:click="onClickLeft">
+                            <div class="tile-image" v-bind:class="{in:isRollOverL}" v-on:mouseover="onRollOverLeft" v-on:mouseout="onRollOutLeft">
+                                <img class="thumbnail lazy" v-if="model.l.page>0" v-bind:data-original="model.l.path" src="./html5/images/transparent.gif" alt="thumbnail image">
+                                <img v-if="isLeftCheck" class="check" src="./html5/images/scormscorecheck.png" alt="scorm check image">
+                                <div class="tile-over-icon" v-show="$root.isPdfOpen" v-if="model.l.page>0 && $root.soPdfType == 'page'" >
+                                    <a v-show="!$root.isPdfOpen"
+                                       class="tile-btn pagepdf-btn btn-bg"
+                                       v-bind:class="{'large':$root.isPdfOpen}"
+                                       href="{{$root.bookpath}}pdf/{{model.l.page}}.pdf"
+                                       target="_blank"
+                                       v-on:mouseover="$root.buttonMouseOver($event)"
+                                       v-on:mouseleave="$root.buttonMouseLeave($event)">
+                                        <div class="color-item">
+                                            <span class="icon"></span>
+                                        </div>
+                                    </a>
+                                    <div v-show="$root.isPdfOpen"
+                                         class="tile-btn pagepdf-btn btn-bg"
+                                         v-bind:class="{'large':$root.isPdfOpen}">
+                                        <div class="color-item">
+                                            <span class="icon"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile-label" v-if="model.l.page>0" v-bind:style="{visibility:$root.soVisualIndexLabel ? 'visible' : 'hidden'}">{{model.l.label}}</div>
+                        </div>
+                    </div>
+
+                    <div class="tile right">
+                        <div class="tile-content loading" v-on:click="onClickRight">
+                            <div class="tile-image" v-bind:class="{in:isRollOverR}" v-on:mouseover="onRollOverRight" v-on:mouseout="onRollOutRight">
+                                <img class="thumbnail lazy" v-if="model.r.page>0" v-bind:data-original="model.r.path" src="./html5/images/transparent.gif" alt="thumbnail image">
+                                <img v-if="isRightCheck" class="check" src="./html5/images/scormscorecheck.png" alt="scorm check image">
+                                <div class="tile-over-icon" v-show="$root.isPdfOpen" v-if="model.r.page>0 && $root.soPdfType == 'page'">
+                                    <a v-show="!$root.isPdfOpen"
+                                       class="tile-btn pagepdf-btn btn-bg"
+                                       v-bind:class="{'large':$root.isPdfOpen}"
+                                       href="{{$root.bookpath}}pdf/{{model.r.page}}.pdf"
+                                       target="_blank"
+                                       v-bind:style="$root.buttonColorStyle('item')"
+                                       v-on:mouseover="$root.buttonMouseOver($event)"
+                                       v-on:mouseleave="$root.buttonMouseLeave($event)">
+                                        <div class="color-item">
+                                            <span class="icon"></span>
+                                        </div>
+                                    </a>
+                                    <div v-show="$root.isPdfOpen"
+                                         class="tile-btn pagepdf-btn btn-bg"
+                                         v-bind:class="{'large':$root.isPdfOpen}">
+                                        <div class="color-item">
+                                            <span class="icon"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile-label" v-if="model.r.page>0" v-bind:style="{visibility:$root.soVisualIndexLabel ? 'visible' : 'hidden'}" title="{{model.r.label}}">{{model.r.label}}</div>
+                        </div>
+                    </div>
+                </li>
+            </script>
+
+            <div id="thumbnail-list" data-init="true" class="scroll-area" v-show="isThumbnailOpen">
+                <div class="scroll-content">
+                    <ul class="tilelist" v-bind:class="[bookDirectionL2R ? 'l2r' : '']">
+                        <visualindex-row v-for="v in filterdVisualIndexArray" track-by="$index" v-bind:model="v"></visualindex-row>
+                    </ul>
+                    <div v-if="filterdVisualIndexArray.length < visualIndexArray.length" class="more-btn btn-bg" v-on:click="onClickMoreThumbnail" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-item">
+                            {{words.More}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <script type="text/x-template" id="textindex-template">
+                <li>
+                    <div class="item btn-bg"
+                         v-on:click="toggle"
+                         v-bind:class="[isFolder ? 'folder' : 'file', open ? 'open' : 'close']"
+                         v-on:mouseover="$root.buttonMouseOver($event)"
+                         v-on:mouseleave="$root.buttonMouseLeave($event)">
+                        <div class="btn color-item">
+                            <span class="tree-icon"><span class="icon"></span></span>
+                            <span class="tree-label">{{{replaceNewline(model.name)}}}</span>
+                            <span v-if="$root.soTextIndexLabel" class="tree-count">{{$root.page2Label(model.pagenum)}}</span>
+                        </div>
+                    </div>
+                    <ul v-show="open" v-if="isFolder && model.menu.length>0">
+                        <textindex-item v-for="m in model.menu" v-bind:model="m" v-bind:open="$root.soTextIndexTreeOpen"></textindex-item>
+                    </ul>
+                    <ul v-show="open" v-if="isFolder && isSingleChild">
+                        <textindex-item v-bind:model="model.menu" v-bind:open="$root.soTextIndexTreeOpen"></textindex-item>
+                    </ul>
+                </li>
+            </script>
+
+            <div id="textindex-list" class="scroll-area" v-show="isTextIndexOpen">
+                <ul id="textindex-tree" class="scroll-content tree">
+                    
+                    <textindex-item v-if="!isMenuXmlRootArray" v-bind:model="treeData" v-bind:open="$root.soTextIndexTreeOpen"></textindex-item>
+                    
+                    <textindex-item v-if="isMenuXmlRootArray" v-for="model in treeData" v-bind:model="model" v-bind:open="$root.soTextIndexTreeOpen"></textindex-item>
+                </ul>
+            </div>
+            
+
+            
+            <script type="text/x-template" id="fusenlist-template">
+                <li v-bind:class="model.colorClassName">
+                    <div class="item btn-bg"
+                         v-on:click="onClickFusenData"
+                         v-on:mouseover="$root.buttonMouseOver($event)"
+                         v-on:mouseleave="$root.buttonMouseLeave($event)">
+                        <div class="btn color-item">
+                            <span class="tree-icon">
+                                <span class="fusen-box-bg"></span>
+                            </span>
+                            <span class="tree-label">{{model.text}}</span>
+                            <span v-if="$root.soFusenIndexLabel" class="tree-count">{{$root.pageId2Label(model.pageId)}}</span>
+                        </div>
+                    </div>
+                </li>
+            </script>
+
+            <div id="fusen-list" class="scroll-area" v-show="isFusenListOpen">
+                <ul id="fusen-tree" class="scroll-content tree">
+                    <fusenlist-item v-for="model in fusenListDataArray | orderBy fusenListSort" v-bind:model="model"></fusenlist-item>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+
+
+    
+    <div transition="slide" id="pdf-slidemenu" class="noprintpage slidemenu header-space footer-space leftside-space" v-show="isPdfOpen">
+        <div class="slidemenu-titlebar">
+            <div class="btn-bg slidemenu-close-btn" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-on:click="isPdfOpen = false">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            <div id="pdf-thumbnail-list" data-init="true" class="scroll-area">
+                <div class="scroll-content">
+                    <ul class="tilelist">
+                        <visualindex-row v-for="v in filterdVisualIndexPdfArray" track-by="$index" v-bind:model="v"></visualindex-row>
+                    </ul>
+                    <div v-if="filterdVisualIndexPdfArray.length < visualIndexArray.length" class="more-btn btn-bg" v-on:click="onClickMorePdfThumbnail" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-item">
+                            {{words.More}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="search-slidemenu" class="noprintpage slidemenu header-space footer-space leftside-space" v-show="isSearchOpen">
+        <div class="slidemenu-titlebar">
+            <div class="btn-bg slidemenu-close-btn" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-on:click="isSearchOpen = false">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-inner">
+            <div id="search-list" class="scroll-area">
+                <div class="scroll-content">
+                    <div class="search-form">
+                        <label class="search-option-label">{{words.SearchType}}</label>
+                        <span class="saerch-option">
+                            <label class="radio">
+                                <input type="radio" name="search-option-and" value="and" v-model="checkedSearchOption" v-on:change="changeSearchType"><span class="radio-name">{{words.SearchAnd}}</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="examplecheck" value="or" v-model="checkedSearchOption" v-on:change="changeSearchType"><span class="radio-name">{{words.SearchOr}}</span>
+                            </label>
+                        </span>
+                    </div>
+                    <div id="nomatch" v-show="!searchResultArray.length">{{words.SearchResultNomatch}}</div>
+                    <ul id="search-result">
+                        <li v-for="s in filterdSearchResultArray | orderBy 'page'">
+                            <div class="btn-bg item" v-on:click="onClickSearchResult(s.page)" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                                <div class="btn color-item">
+                                    <div class="res-icon"><span class="icon"></span></div>
+                                    <span class="res-data">{{s.before}}<span class="res-hit">{{s.text}}</span>{{s.behind}}</span>
+                                    <span class="res-page">{{s.label}}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div v-if="filterdSearchResultArray.length < searchResultArray.length" class="btn-bg more-btn" v-on:click="onClickMoreSearchResult" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-item">{{words.More}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="share-slidemenu" class="noprintpage slidemenu header-space footer-space leftside-space" v-show="isShareOpen">
+        <div class="slidemenu-titlebar">
+            <div class="slidemenu-close-btn btn-bg" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-on:click="isShareOpen = false">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            <div id="share-list" class="scroll-area">
+                <div class="scroll-content">
+
+                    <div class="share-message share-area" v-if="soShare || soTextSelect">
+                        <span class="icon"></span>
+                        <span class="label">{{words.ShareMessage}}</span>
+                    </div>
+
+                    <div id="share-url" class="share-area" v-if="soShare">
+                        <label id="share-url-label" class="textarea-label" for="share-url"><span class="label-label">{{words.ShareUrl}}</span></label>
+                        <textarea @focus="setTextInputFocus" id="share-url-textarea" title="share url" name="share-url" rows="6" placeholder="" readonly="readonly" onclick="this.select()" v-model="selectedAreaUrl"></textarea>
+                    </div>
+
+                    <ul v-if="soShare">
+                        <li id="line" class="box" v-if="soSNSLine">
+                            <div id="line-btn" class="share-btn btn-bg" v-on:click="onClickLine" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                                <div class="btn color-item">
+                                    <span class="icon btn-icon"></span>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li id="twitter" class="box" v-if="soSNSTwitter">
+                            <div id="twitter-btn" class="share-btn btn-bg" v-on:click="onClickTwitter" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                                <div class="btn color-item">
+                                    <span class="icon btn-icon"></span>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        
+                        
+                        <li id="mail" class="box" v-if="soSNSMail">
+                            <div id="mail-btn" class="share-btn btn-bg" v-on:click="onClickMail" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                                <div class="btn color-item">
+                                    <span class="icon btn-icon"></span>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+
+                    <div id="share-embed" class="share-area" v-if="soEmbedHtml">
+                        <label id="share-embed-label" class="textarea-label" for="share-embed"><span class="label-label">{{words.ShareEmbed}}</span></label>
+                        <textarea @focus="setTextInputFocus" id="share-embed-textarea" title="share embed" name="share-embed" rows="8" placeholder="" readonly="readonly" onclick="this.select()" v-model="selectedShareIframeTag"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="text-slidemenu" class="noprintpage slidemenu header-space footer-space leftside-space" v-show="isTextOpen">
+        <div class="slidemenu-titlebar">
+            <div class="slidemenu-close-btn btn-bg" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-on:click="isTextOpen = false">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            <div id="text-list" class="scroll-area">
+                <div class="scroll-content">
+
+                    <div class="share-message share-area" v-if="soShare || soTextSelect">
+                        <span class="icon"></span>
+                        <span class="label">{{words.ShareMessage}}</span>
+                    </div>
+
+                    <div id="share-text" class="share-area" v-if="soTextSelect">
+                        <label id="share-text-label" class="textarea-label" for="share-text">
+                            <span class="label-label">
+                                <span>{{words.ShareText}}<span v-if="soWeblio">{{words.And}}{{words.ShareDictionary}}</span></span>
+                            </span>
+                        </label>
+                        <textarea @focus="setTextInputFocus" id="share-text-textarea" title="share text" name="share-text" rows="6" placeholder="" v-model="selectedTextString"></textarea>
+                    </div>
+
+                    <div id="share-dictionary-btn" class="buttonbar share-area" v-if="soWeblio">
+                        <div class="buttonbar-box right">
+                            <div class="save-btn" class="btn-bg" v-bind:class="[selectedTextString.length == 0 ? 'disabled' : '']" v-on:click="onClickDictionary" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                                <div class="btn color-btn">
+                                    <span class="icon btn-icon"></span>
+                                    <span class="btn-label">{{words.ShareSearchDictionary}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="share-dictionary" v-if="soWeblio">
+                        <div id="weblio-content" v-show="isWeblioOpen">
+                            <div id="weblio-icon">
+                                <span class="icon"></span>
+                            </div>
+                            <iframe title="weblio" v-bind:src="weblioSrc" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="fusen-slidemenu" class="noprintpage slidemenu header-space footer-space leftside-space" v-bind:class="{'slidemenu-titlebar-high':fusenData.id != ''}" v-show="isFusenOpen">
+        <div class="slidemenu-titlebar">
+            <div class="delete-btn" v-on:click="onClickFusenDelete" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-if="fusenData.id != ''">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label">{{words.Delete}}</span>
+                </div>
+            </div>
+            <div class="slidemenu-titlebar-inner">
+                <div class="buttonbar-box">
+                </div>
+            </div>
+        </div>
+
+        <div id="fusencolor-list" class="scroll-area">
+            <div class="scroll-content">
+
+                <textarea id="fusen-text" @focus="setTextInputFocus" title="fusen text" name="fusen-text" rows="6" placeholder="" v-model="fusenData.text" v-bind:style="{ backgroundColor: fusenData.bgColor }"></textarea>
+
+                <div id="fusen-fillcolor" class="color-option">
+                    <ul class="color-picker">
+                        <li v-for="item in hsFusenBGColors">
+                            <span class="btn color-box-bg" v-bind:class="[fusenData.bgColor == item ? 'active' : '']" v-on:click="onClickFusenColor(item)">
+                                <span class="color-box" v-bind:style="{ backgroundColor: item }"></span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="buttonbar">
+                    <div class="buttonbar-box left">
+                        <div class="cancel-btn" class="btn-bg" v-on:click="onClickFusenCancel" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn color-btn">
+                                <span>{{words.Cancel}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttonbar-box right">
+                        <div class="save-btn" class="btn-bg" v-on:click="onClickFusenSave" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn color-btn">
+                                <span>{{words.OK}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="tegaki-slidemenu" class="noprintpage slidemenu slidemenu-titlebar-high header-space footer-space leftside-space" v-show="isTegakiColorOpen">
+        <div class="slidemenu-titlebar">
+            <div class="all-delete-btn" v-on:click="onTegakiEraserAllButtonClick" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-show="!isVerticallyLong">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+
+            <div class="slidemenu-titlebar-inner">
+                <div class="segmented">
+                    <label id="stroke-curve" data-type="curve">
+                        <span class="btn-bg segmented-btn" v-on:click="onClickTegakiStroke('curve')" v-bind:class="{active:tegakiData.stroke == 'curve' && !isTegakiEraserLineOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                            </div>
+                        </span>
+                    </label>
+                    <label id="stroke-straightline" data-type="straightline">
+                        <span class="btn-bg segmented-btn" v-on:click="onClickTegakiStroke('straightline')" v-bind:class="{active:tegakiData.stroke == 'straightline' && !isTegakiEraserLineOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                              <span class="btn-label"></span>
+                            </div>
+                        </span>
+                    </label>
+                    <label id="stroke-eraser" data-type="eraser" v-if="!isVerticallyLong">
+                        <span class="btn-bg segmented-btn" v-on:click="onTegakiEraserLineButtonClick" v-bind:class="{active:isTegakiEraserLineOpen}" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                             <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                             </div>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="slidemenu-close-btn btn-bg" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)" v-on:click="onClickTegakiClose" v-show="!isVerticallyLong">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            <div id="tegakicolor-list" class="scroll-area">
+                <div class="scroll-content">
+
+                    <div id="tegaki-fillcolor" class="color-option">
+                        <ul class="color-picker">
+                            <li v-for="item in hsTegakiPenColors">
+                                <span class="btn color-box-bg" v-on:click="onClickTegakiColor(item)" v-bind:class="[tegakiData.color == item ? 'active' : '', isTegakiEraserLineOpen ? 'disabled' : '']">
+                                    <span class="color-box" v-bind:style="{ backgroundColor: item }"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="tegaki-thickness" class="color-option">
+                        <ul class="color-picker">
+                            <li v-for="item in hsTegakiThicknesses">
+                                <span class="btn color-box-bg" v-on:click="onClickTegakiThickness(item.thickness, item.thicknessType)" v-bind:class="[tegakiData.thicknessType == item.thicknessType ? 'active' : '', isTegakiEraserLineOpen ? 'disabled' : '']">
+                                    <span class="color-box">
+                                        <span class="thickness" v-bind:class="item.thicknessType"></span>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tegakicolor-message" v-bind:class="[isTegakiEraserLineOpen ? 'disabled' : '']">
+                      <span class="icon"></span>
+                      <span class="label">{{words.TegakiStraightLineMessage}}</span>
+                    </div>
+
+                    <div class="buttonbar" v-show="isVerticallyLong">
+                        <div class="buttonbar-box right">
+                            <div class="save-btn" class="btn-bg" v-on:click="onClickTegakiClose($event)" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                                <div class="btn color-btn">
+                                    <span>{{words.OK}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    
+    <div id="setting-panel" class="noprintpage panel panel-balloon header-space rightside-space" v-show="isSettingOpen">
+        <div class="btn-bg" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+            <div id="setting-panel-close" class="panel-close" v-on:click="onClickSettingClose">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="setting-list">
+            <div class="panel-content">
+                <ul>
+                    <li id="tegaki-displayed" v-if="allowMemo && soChangeMemoVisible">
+                        <div id="setting-tegaki-displayed-btn" class="btn-bg" v-on:click="onClickSettingDisplayed" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn color-item">
+                                
+                                <span class="btn-label">
+                                    <span v-show="memoLayerVisible">{{words.FuseTegakiLayerHide}}</span>
+                                    <span v-show="!memoLayerVisible">{{words.FuseTegakiLayerShow}}</span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                  <li id="setting-help" v-if="soHelp">
+                    <div id="setting-help-btn" class="setting-list-btn" v-on:click="onClickHelp" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                        <div class="btn color-item">
+                            
+                            <span class="btn-label">
+                                <span class="btn-label">{{words.Help}}</span>
+                            </span>
+                        </div>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="viewer-flipl-outer" class="header-space footer-space noprintpage viewer-btn-outer" v-bind:style="{visibility:visibilityFlipL}" v-show="isSkinInitialized">
+        <div id="viewer-flipl" class="viewer-btn btn" value="filpL" v-on:click="flipL" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+            <span class="icon"></span>
+        </div>
+    </div>
+    <div id="viewer-flipr-outer" class="header-space footer-space noprintpage viewer-btn-outer" v-bind:style="{visibility:visibilityFlipR}" v-show="isSkinInitialized">
+        <div id="viewer-flipr" class="viewer-btn btn" value="flipR" v-on:click="flipR" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+            <span class="icon"></span>
+        </div>
+    </div>
+
+    
+    <div id="print-modal" class="noprintpage modal-mask" v-show="isPrintModalOpen" transition="modal">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+
+                <div class="modal-body">
+                    <div class="print-option">
+                        <label class="print-option-title">{{words.Print}}</label>
+                        <ul>
+                            <li class="textinput" v-if="soMultiplePagesPrint">
+                                <span class="print-option-page">
+                                    <span>{{words.PrintPageLabel}}</span>
+                                    <input @focus="setTextInputFocus" id="print-option-startpage" title="start page" type="text" name="print-option-startpage" v-model="printStartPage" pattern="\d*" v-on:change="changePrintStartPage($event)">
+                                    <span> - </span>
+                                    <input @focus="setTextInputFocus" id="print-option-endpage" title="end page" type="text" name="print-option-endpage" v-model="printEndPage" pattern="\d*" v-on:change="changePrintEndPage($event)">
+                                </span>
+                            </li>
+                            
+                            <li class="checkbox" v-if="allowMemo">
+                                <label for="print-option-tegaki">
+                                    <input id="print-option-tegaki" type="checkbox" name="print-option-tegaki" value="tegaki" checked="checked" v-model="checkedPrintOptions"><span class="label-text">{{words.PrintOptionFuseTegaki}}</span>
+                                </label>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="buttonbar">
+                    <div class="buttonbar-box left">
+                        <div class="cancel-btn" class="btn-bg" v-on:click="onClickPrintModalCancel" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn">
+                                <span>{{words.Cancel}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttonbar-box right">
+                        <div class="save-btn" class="btn-bg" v-on:click="onClickPrintModalOK" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn">
+                                <span>{{words.OK}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="setting" class="noprintpage header-space rightside-space" v-if="showSetting">
+        <div id="setting-btn" class="btn-bg" v-bind:class="{active:isSettingOpen}" v-on:click="onClickSetting" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+            <div class="btn">
+                <span class="icon btn-icon"></span>
+                
+            </div>
+
+        </div>
+    </div>
+
+    
+    <div id="popuphint" class="noprintpage" v-show="linkPopupText" v-bind:style="popuphintStyle">
+        <div id="popuphint-inner" v-bind:style="popuphintInnerStyle">{{linkPopupText}}</div>
+    </div>
+    
+
+    
+    
+
+    
+    
+
+    
+    <div id="pdf-link-modal" class="noprintpage modal-mask" transition="modal" v-if="isPDFLinkModal">
+        <div class="modal-wrapper" v-on:click.self="onClickPDFOutside($event)">
+            <div class="modal-container">
+
+                <div class="modal-body">{{words.PdfChoice}}</div>
+
+                <div class="buttonbar skin-common">
+                    <div class="buttonbar-box left">
+                        <div class="save-btn" class="btn-bg" v-on:click="onClickPDFLeft($event)" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn">
+                                <span>{{words.PdfChoiceLeft}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttonbar-box right">
+                        <div class="save-btn" class="btn-bg" v-on:click="onClickPDFRight($event)" v-on:mouseover="buttonMouseOver($event)" v-on:mouseleave="buttonMouseLeave($event)">
+                            <div class="btn">
+                                <span>{{words.PdfChoiceRight}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="print-message">{{words.PrintMessagePC}}</div>
+    
+
+    
+
+</div>
+
+<script type="text/javascript" src="./html5/js/flipper.js?c=20250703163053" charset="utf-8"></script>
+<script type="text/javascript" src="./html5/js/skin.js?c=20250703163053" charset="utf-8"></script>
+
+
+<noscript>
+  <div class="noscript-message">
+    Please enable JavaScript. <a href="./pageindices/index.html">page list</a>
+  </div>
+</noscript>
+
+</body>
+</html>

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache, no-store">
+<meta http-equiv="expires" content="0">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="apple-touch-icon-precomposed" href="./html5/images/apple-touch-icon.png?c=20250703163053">
+
+<title>総合案内_ベトナム語版_デジパン用</title>
+
+
+<script type="text/javascript" src="flipper3js/tcoredirector.js"></script>
+
+
+
+<link rel="stylesheet" href="./html5/css/skin-m.css?c=20250703163053" type="text/css" media="screen">
+<link rel="stylesheet" href="./html5/css/print-m.css?c=20250703163053" type="text/css" media="print">
+<link rel="stylesheet" href="./html5/css/theme-m.css?c=20250703163053" type="text/css" media="screen">
+<link rel="stylesheet" href="./html5/css/design-m.css?c=20250703163053" type="text/css" media="screen">
+<!--
+<link rel="stylesheet" href="./html5custom/css/custom-m.css?c=20250703163053" type="text/css" media="screen">
+-->
+
+
+
+
+<script src="./html5/js/lwUACheck.js" type="text/javascript" charset="utf-8"></script>
+<script src="./html5/js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="./html5/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./html5/js/jquery.xml2json.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="./html5/js/rgbcolor.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="./html5/extensionlinkhandler.js" type="text/javascript" charset="utf-8"></script>
+<script src="./html5/pagechangehandler.js" type="text/javascript" charset="utf-8"></script>
+
+<script language="JavaScript" type="text/javascript">
+    var phoneGapShareUrl = '';
+    var isPDFList = false;
+    var isLibra = false;
+    var scormScoreKind = "";
+    function checkScorm() {
+        if (scormScoreKind === '1.2' || scormScoreKind === '2004' || scormScoreKind === 'score'){
+            document.write("<scr" + "ipt type='text/javascript' src='./html5/js/sscontrol.min.js' charset='utf-8'></scr" + "ipt>");
+        }
+    }
+
+    function scormInitilaized(){
+        if (scormScoreKind === '1.2') {
+            scormSetValue("cmi.core.lesson_status", "completed");
+            SCOCommit();
+        } else if (scormScoreKind === '2004') {
+            scormSetValue("cmi.success_status", "passed");
+            scormSetValue("cmi.completion_status", "completed");
+            SCOCommit();
+        }
+    }
+
+    function scormSetValue(model, value) {
+        var result = scormCommand("LMSSetValue", model + "," + value);
+        return result;
+    }
+
+    checkScorm();
+</script>
+
+
+<style>
+    [v-cloak] { display:none }
+</style>
+
+
+<script>
+$(function(){
+});
+</script>
+</head>
+<body>
+<!--version 5.0.13 -->
+
+<p class="skip-nav"><a href="#flipper-app" class="skip-link">このページの本文へ</a></p>
+
+<div id="flipper-app" class="header-space leftside-space rightside-space bottomside-space" bookpath="./" imagepath="./">
+    <div id="flipper-component">
+        <component v-bind:is="view" v-ref:view></component>
+    </div>
+</div>
+
+
+<div id="skin" v-cloak>
+
+    <div id="header" class="noprintpage bottomside-space">
+        <div id="header-color">
+            <!--
+            <iframe title="header" width="100%" height="100%" src="./html5mheader.html?c=20250703163053" hspace="0" vspace="0" marginheight="0" marginwidth="0" border="0" frameborder="0" framespacing="0" scrolling="no"></iframe>
+            -->
+        </div>
+    </div>
+
+    <div id="leftside" class="noprintpage sidebar header-space bottomside-space">
+        
+    </div>
+
+    <div id="rightside" class="noprintpage sidebar header-space bottomside-space">
+        
+    </div>
+
+    <div id="bottomside" class="noprintpage">
+        
+    </div>
+
+    <div id="titlebar" class="noprintpage header-space bottomside-space toolbar" v-bind:style="{visibility:isToolbarOpen? 'visible' : 'hidden'}">
+        <div id="titlebar-list" v-bind:style="{visibility:isSkinInitialized && isToolbarOpen ? 'visible' : 'hidden'}">
+            <div id="titlebar-home" class="box" v-if="hsMobileHomepageButtonEnabled">
+                <a class="btn-bg" href="{{hsMobileHomepageButtonUrl}}" target="{{hsMobileHomepageButtonTarget}}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                    <div class="color-item"></div>
+                    <span class="icon"></span>
+                </a>
+            </div>
+            <div id="titlebar-title" class="box">総合案内_ベトナム語版_デジパン用</div>
+            <div id="titlebar-label" class="box">{{pageIndicateValue}}</div>
+
+
+            <div id="titlebar-setting" class="box" v-if="showSetting">
+                <div id="setting-btn" class="btn-bg" v-bind:class="{active:isSettingOpen}" v-touch:tap="onClickSetting" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                    <div class="btn">
+                        <span class="icon btn-icon"></span>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="titlebar-close" class="box titlebar-close" v-show="hsMobileCloseButtonType">
+                <div class="btn-bg titlebar-close-btn" v-touch:tap="onCloseButtonClick($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                    <div class="btn">
+                        <span class="icon btn-icon"></span>
+                        <span class="btn-label">{{words.Close}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="noprintpage bottomside-space toolbar" v-bind:style="{visibility: isToolbarOpen || isTegakiViewOpen ? 'visible' : 'hidden'}" v-on:touchstart.prevent.stop v-on:touchmove.prevent.stop v-on:touchend.prevent.stop>
+        <div id="footer-color">
+            <ul id="footer-mainlist" class="footer-list" v-bind:style="{visibility:isSkinInitialized && isToolbarOpen ? 'visible' : 'hidden'}" v-show="!isTegakiViewOpen">
+                <li id="search" class="box" v-if="soSearch">
+                    <div id="searchview-btn" class="btn-bg footer-btn" v-touch:tap="onSearchViewButtonClick($event)" v-bind:class="{active:isSearchOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Search}}</span>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="list" class="box" v-if="showList">
+                    <div id="list-btn" class="btn-bg footer-btn" v-touch:tap="onListButtonClick($event)" v-bind:class="{active:isListOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)" v-if="!showListPdf">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.List}}</span>
+                        </div>
+                    </div>
+                    <div id="listpdf-btn" class="btn-bg footer-btn" v-touch:tap="onListPdfButtonClick($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)" v-if="showListPdf">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Pdf}}</span>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="modalpdf" class="box" v-if="showModalPDF">
+                    <div id="modalpdf-btn" class="btn-bg footer-btn" v-touch:tap="onModalPdfButtonClick($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Pdf}}</span>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="share" class="box" v-if="soShare">
+                    <div id="share-btn" class="btn-bg footer-btn" v-touch:tap="onShareButtonClick($event)" v-bind:class="{active:isShareOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Share}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="fusen" class="box" v-if="allowMemo">
+                    <div id="fusen-btn" class="btn-bg footer-btn" v-touch:tap="onFusenButtonClick($event)" v-bind:class="{active:isFusenOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Fusen}}</span>
+                        </div>
+                    </div>
+                </li>
+                <li id="tegaki" class="box" v-if="allowMemo">
+                    <div id="tegaki-btn" class="btn-bg footer-btn" v-touch:tap="onTegakiButtonClick($event)" v-bind:class="{active:isTegakiViewOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label">{{words.Tegaki}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul id="footer-tegakilist" class="footer-list" v-show="isTegakiViewOpen">
+
+                <li id="tegaki-color" class="box">
+                    <div id="tegaki-color-btn" class="btn-bg footer-btn" v-touch:tap="onTegakiColorButtonClick($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn">
+                             <span class="btn-icon">
+                                <span class="color-box-bg">
+                                    <span class="color-box">
+                                        <span class="thickness" v-bind:class="tegakiData.thicknessType" v-bind:style="{backgroundColor: tegakiData.color }"></span>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li id="tegaki-pen" class="box">
+                    <div id="tegaki-pen-btn" class="btn-bg footer-btn" v-touch:tap="onTegakiPenButtonClick($event)" v-bind:class="{active:!isTegakiEraserLineOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon" v-bind:class="{curve:tegakiData.stroke == 'curve', straightline:tegakiData.stroke == 'straightline'}"></span>
+                            <span class="btn-label" v-show="tegakiData.stroke == 'straightline'"></span>
+                            <span class="btn-label" v-show="tegakiData.stroke != 'straightline'"></span>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="tegaki-eraser-line" class="box">
+                    <div id="tegaki-eraser-line-btn" class="btn-bg footer-btn" v-touch:tap="onTegakiEraserLineButtonClick($event)" v-bind:class="{active:isTegakiEraserLineOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label"></span>
+                        </div>
+                    </div>
+                </li>
+                <li id="tegaki-eraser-all" class="box">
+                    <div id="tegaki-eraser-all-btn" class="btn-bg footer-btn" v-touch:tap="onTegakiEraserAllButtonClick($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label"></span>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="tegakilist-close" class="box">
+                    <div id="tegakilist-close-btn" class="btn-bg footer-btn" v-touch:tap="onTegakiCloseButtonClick($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-btn">
+                            <span class="icon btn-icon"></span>
+                            <span class="btn-label"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div transition="slide" id="search-slidemenu" class="noprintpage slidemenu-m" v-show="isSearchOpen">
+        <div class="slidemenu-titlebar">
+            <div class="slidemenu-titlebar-inner">
+                <div id="searchform">
+                    <form id="searchform-inner" onsubmit="return false">
+                        <input id="search-keyword" title="search keyword" type="text" value="" v-model="searchString" v-on:keyup.enter="searchText">
+                        <div id="search-clear-outer" v-touch:tap="searchClear" v-show="searchString.length">
+                            <div id="search-clear" class="icon"></div>
+                        </div>
+                        <div id="search-btn" name="search-btn" class="btn-bg" v-touch:tap="searchText" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn color-btn">
+                                <span class="icon"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="btn-bg slidemenu-close-btn" v-touch:tap="onClickSearchClose" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            <div id="search-list" class="scroll-area">
+                <div class="scroll-content">
+                    <div class="search-form">
+                        <label class="search-option-label">{{words.SearchType}}</label>
+                        <span class="saerch-option">
+                            <label class="radio">
+                                <input type="radio" name="search-option-and" value="and" v-model="checkedSearchOption" v-on:change="changeSearchType"><span class="radio-name">{{words.SearchAnd}}</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="examplecheck" value="or" v-model="checkedSearchOption" v-on:change="changeSearchType"><span class="radio-name">{{words.SearchOr}}</span>
+                            </label>
+                        </span>
+                    </div>
+                    <div id="nomatch" v-show="isSearchNomatchOpen">{{words.SearchResultNomatch}}</div>
+                    <ul id="search-result">
+                        <li v-for="s in filterdSearchResultArray | orderBy 'page'">
+                            <div class="item btn-bg" v-touch:tap="onClickSearchResult(s.page)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                <div class="btn color-item">
+                                    <div class="res-icon"><span class="icon"></span></div>
+                                    <span class="res-data">{{s.before}}<span class="res-hit">{{s.text}}</span>{{s.behind}}</span>
+                                    <span class="res-page">{{s.label}}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div v-if="filterdSearchResultArray.length < searchResultArray.length" class="more-btn btn-bg" v-touch:tap="onClickMoreSearchResult" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-item">{{words.More}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="list-slidemenu" class="noprintpage slidemenu-m" v-show="isListOpen" v-bind:class="{'slidemenu-titlebar-high':showListSegmented, 'show-segmented':showListSegmented}">
+        <div class="slidemenu-titlebar">
+            <div class="slidemenu-titlebar-inner">
+                <div class="segmented">
+                    <label id="textindex-btn" data-type="textindex" v-if="soTextIndex">
+                        <span class="btn-bg segmented-btn" v-touch:tap="onTextIndexButtonClick" v-bind:class="{active:isTextIndexOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label">{{words.Textindex}}</span>
+                            </div>
+                        </span>
+                    </label>
+                    <label id="thumbnail-btn" data-type="thumbnail" v-if="soVisualIndex">
+                        <span class="btn-bg segmented-btn" v-touch:tap="onThumbnailButtonClick" v-bind:class="{active:isThumbnailOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label">{{words.Thumbnail}}</span>
+                            </div>
+                        </span>
+                    </label>
+                    <label id="pdf-btn" data-type="pdf" v-if="soPdf && !showModalPDF">
+                        <span class="btn-bg segmented-btn" v-touch:tap="onPdfButtonClick" v-bind:class="{active:isPdfOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                            </div>
+                        </span>
+                    </label>
+                    <label id="fusenlist-btn" data-type="fusen" v-if="soFusenIndex">
+                        <span class="btn-bg segmented-btn" v-touch:tap="onFusenListButtonClick" v-bind:class="{active:isFusenListOpen}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label">{{words.FusenList}}</span>
+                            </div>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="slidemenu-close-btn btn-bg" v-touch:tap="isListOpen = false" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            
+            <script type="text/x-template" id="visual-index">
+                <li class="tile">
+                    <div class="tile-inner">
+                        <div class="tile-content loading" v-touch:tap="onClick">
+                            <div class="tile-image">
+                                <img class="thumbnail lazy" v-bind:data-original="model.path" src="./html5/images/transparent.gif" alt="thumbnail image">
+                                <img v-if="isCheck" class="check" src="./html5/images/scormscorecheck.png" alt="scorm check image">
+                                <div class="tile-over-icon" v-show="$root.isPdfOpen || isRollOverL" v-if="model.page>0 && $root.soPdfType == 'page'" >
+                                    <div class="tile-btn pagepdf-btn"
+                                       v-bind:class="{'large':$root.isPdfOpen}">
+                                        <span class="icon"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile-label" v-bind:style="{visibility:$root.soVisualIndexLabel ? 'visible' : 'hidden'}" title="{{model.label}}">{{model.label}}</div>
+                        </div>
+                    </div>
+                </li>
+            </script>
+
+            <div id="thumbnail-list" data-init="true" class="scroll-area" v-show="isThumbnailOpen || isPdfOpen">
+                <div class="scroll-content">
+                    
+                    <ul class="tilelist-m" v-bind:class="[bookDirectionL2R ? 'l2r' : '']">
+                        <visualindex-row v-for="v in filterdVisualIndexArray" v-bind:model="v"></visualindex-row>
+                    </ul>
+                    <div v-if="filterdVisualIndexArray.length < visualIndexArray.length" class="more-btn btn-bg" v-touch:tap="onClickMoreThumbnail" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                        <div class="btn color-item">{{words.More}}</div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <script type="text/x-template" id="textindex-template">
+                <li>
+                    <div class="item btn-bg"
+                         v-touch:tap="toggle"
+                         v-bind:class="[isFolder ? 'folder' : 'file', open ? 'open' : 'close']"
+                         v-on:touchstart="$root.buttonTouchStart($event)"
+                         v-on:touchmove="$root.buttonTouchMove($event)"
+                         v-on:touchend="$root.buttonTouchEnd($event)">
+                        <div class="btn color-item">
+                            <span class="tree-icon"><span class="icon"></span></span>
+                            <span class="tree-label">{{{replaceNewline(model.name)}}}</span>
+                            <span v-if="$root.soTextIndexLabel" class="tree-count">{{$root.page2Label(model.pagenum)}}</span>
+                        </div>
+                    </div>
+                    <ul v-show="open" v-if="isFolder && model.menu.length>0">
+                        <textindex-item v-for="m in model.menu" v-bind:model="m" v-bind:open="$root.soTextIndexTreeOpen"></textindex-item>
+                    </ul>
+                    <ul v-show="open" v-if="isFolder && isSingleChild">
+                        <textindex-item v-bind:model="model.menu" v-bind:open="$root.soTextIndexTreeOpen"></textindex-item>
+                    </ul>
+                </li>
+            </script>
+
+            <div id="textindex-list" class="scroll-area" v-show="isTextIndexOpen">
+                <ul id="textindex-tree" class="scroll-content tree">
+                    
+                    <textindex-item v-if="!isMenuXmlRootArray" v-bind:model="treeData" v-bind:open="$root.soTextIndexTreeOpen"></textindex-item>
+                    
+                    <textindex-item v-if="isMenuXmlRootArray" v-for="model in treeData" v-bind:model="model" v-bind:open="$root.soTextIndexTreeOpen"></textindex-item>
+                </ul>
+            </div>
+            
+
+            
+            <script type="text/x-template" id="fusenlist-template">
+                <li v-bind:class="model.colorClassName">
+                    <div class="item btn-bg"
+                         v-touch:tap="onClickFusenData"
+                         v-on:touchstart="$root.buttonTouchStart($event)"
+                         v-on:touchmove="$root.buttonTouchMove($event)"
+                         v-on:touchend="$root.buttonTouchEnd($event)">
+                        <div class="btn color-item">
+                            <span class="tree-icon">
+                                <span class="fusen-box-bg"></span>
+                            </span>
+                            <span class="tree-label">{{model.text}}</span>
+                            <span v-if="$root.soFusenIndexLabel" class="tree-count">{{$root.pageId2Label(model.pageId)}}</span>
+                        </div>
+                    </div>
+                </li>
+            </script>
+
+            <div id="fusen-list" class="scroll-area" v-show="isFusenListOpen">
+                <ul id="fusen-tree" class="scroll-content tree">
+                    <fusenlist-item v-for="model in fusenListDataArray | orderBy fusenListSort" v-bind:model="model"></fusenlist-item>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="share-slidemenu" class="noprintpage slidemenu-m" v-show="isShareOpen">
+        <div class="slidemenu-titlebar">
+            <div class="slidemenu-close-btn btn-bg" v-touch:tap="onClickShareClose" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            <div id="share-list" class="scroll-area">
+                <div class="scroll-content">
+                    <div class="share-area" v-if="soShare">
+                        <label id="share-url-label" class="textarea-label" for="share-url"><span class="label-label">URL</span></label>
+                        <textarea id="share-url" name="share-url" rows="6" placeholder="" readonly="readonly" v-model="selectedAreaUrl"></textarea>
+                    </div>
+
+                    <ul v-if="soShare">
+                        <li id="line" class="box" v-if="soSNSLine">
+                            <div id="line-btn" class="share-btn btn-bg" v-touch:tap="onClickLine" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                <div class="btn color-item">
+                                    <span class="icon btn-icon"></span>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li id="twitter" class="box" v-if="soSNSTwitter">
+                            <div id="twitter-btn" class="share-btn btn-bg" v-touch:tap="onClickTwitter" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                <div class="btn color-item">
+                                    <span class="icon btn-icon"></span>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        
+                        
+                        <li id="mail" class="box" v-if="soSNSMail">
+                            <div id="mail-btn" class="share-btn btn-bg" v-touch:tap="onClickMail" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                <div class="btn color-item">
+                                    <span class="icon btn-icon"></span>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="fusen-slidemenu" class="noprintpage slidemenu-m slidemenu-titlebar-high" v-show="isFusenOpen">
+        <div class="slidemenu-titlebar">
+            <div class="delete-btn" v-touch:tap="onClickFusenDelete" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)" v-if="!isFusenCreated">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label">{{words.Delete}}</span>
+                </div>
+            </div>
+
+            <div class="slidemenu-titlebar-inner">
+                <div class="buttonbar-box">
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            <div id="fusencolor-list" class="scroll-area">
+                <div class="scroll-content">
+
+                    <textarea id="fusen-text" title="fusen text" name="fusen-text" rows="6" placeholder="" v-model="fusenData.text" v-bind:style="{ backgroundColor: fusenData.bgColor }"></textarea>
+
+                    <div id="fusen-fillcolor" class="color-option">
+                        <ul class="color-picker">
+                            <li v-for="item in hsFusenBGColors">
+                                <span class="btn btn color-box-bg" v-bind:class="[fusenData.bgColor == item ? 'active' : '']" v-touch:tap="onClickFusenColor(item)">
+                                    <span class="color-box" v-bind:style="{ backgroundColor: item }"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="buttonbar">
+                        <div class="buttonbar-box left">
+                            <div class="cancel-btn" class="btn-bg" v-touch:tap="onClickFusenCancel" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                <div class="btn color-btn">
+                                    <span>{{words.Cancel}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttonbar-box right">
+                            <div class="save-btn" class="btn-bg" v-touch:tap="onClickFusenSave" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                <div class="btn color-btn">
+                                    <span>{{words.OK}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div transition="slide" id="tegaki-slidemenu" class="noprintpage slidemenu-m slidemenu-titlebar-high" v-show="isTegakiColorOpen" v-on:touchstart.prevent.stop v-on:touchmove.prevent.stop v-on:touchend.prevent.stop>
+
+        <div class="slidemenu-titlebar">
+            <div class="slidemenu-titlebar-inner">
+                <div class="segmented">
+                    <label id="stroke-curve" data-type="curve">
+                        <span class="btn-bg segmented-btn" v-touch:tap="onClickTegakiStroke($event, 'curve')" v-bind:class="{active:tegakiDataTemp.stroke == 'curve'}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                            </div>
+                        </span>
+                    </label>
+                    <label id="stroke-straightline" data-type="straightline">
+                        <span class="btn-bg segmented-btn" v-touch:tap="onClickTegakiStroke($event, 'straightline')" v-bind:class="{active:tegakiDataTemp.stroke == 'straightline'}" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn color-btn">
+                                <span class="icon btn-icon"></span>
+                                <span class="btn-label"></span>
+                            </div>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="scroll-inner">
+            <div id="tegakicolor-list" class="scroll-area">
+                <div class="scroll-content">
+
+                    <div id="tegaki-fillcolor" class="color-option">
+                        <ul class="color-picker">
+                            <li v-for="item in hsTegakiPenColors">
+                                <span class="btn color-box-bg" v-bind:class="[tegakiDataTemp.color == item ? 'active' : '']" v-touch:tap="onClickTegakiColor($event, item)">
+                                    <span class="color-box" v-bind:style="{ backgroundColor: item }"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="tegaki-thickness" class="color-option">
+                        <ul class="color-picker">
+                            <li v-for="item in hsTegakiThicknesses">
+                                <span class="btn color-box-bg" v-bind:class="[tegakiDataTemp.thicknessType == item.thicknessType ? 'active' : '']" v-touch:tap="onClickTegakiThickness($event, item.thickness, item.thicknessType)">
+                                    <span class="color-box">
+                                        <span class="thickness" v-bind:class="item.thicknessType"></span>
+                                    </span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buttonbar">
+                        <div class="buttonbar-box right">
+                            <div class="save-btn" class="btn-bg" v-touch:tap="onClickTegakiSave($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                <div class="btn color-btn">
+                                    <span>{{words.OK}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    
+    <div transition="slide" id="setting-slidemenu" class="noprintpage slidemenu-m" v-show="isSettingOpen">
+        <div class="slidemenu-titlebar">
+            <div class="slidemenu-close-btn btn-bg" v-touch:tap="isSettingOpen = false" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                <div class="btn color-btn">
+                    <span class="icon btn-icon"></span>
+                    <span class="btn-label"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-inner">
+            <div id="setting-list" class="scroll-area">
+                <div class="scroll-content">
+                    <div>
+                        <ul>
+                            <li id="setting-tegaki-displayed" v-if="allowMemo && soChangeMemoVisible">
+                                <div id="setting-tegaki-displayed-btn" class="setting-list-btn" v-touch:tap="onClickSettingDisplayed" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                    <div class="btn color-item">
+                                        
+                                        <span class="btn-label">
+                                            <span v-show="memoLayerVisible">{{words.FuseTegakiLayerHide}}</span>
+                                            <span v-show="!memoLayerVisible">{{words.FuseTegakiLayerShow}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="setting-print" v-if="allowPrint">
+                                <div id="setting-print-btn" class="setting-list-btn" v-touch:tap="onClickPrint" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                    <div class="btn color-item">
+                                        
+                                        <span class="btn-label">
+                                            <span class="btn-label">{{words.Print}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="setting-help" v-if="soHelp">
+                                <div id="setting-help-btn" class="setting-list-btn" v-touch:tap="onClickHelp" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                                    <div class="btn color-item">
+                                        
+                                        <span class="btn-label">
+                                            <span class="btn-label">{{words.Help}}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="viewer-flipl-outer" class="header-space footer-space bottomside-space noprintpage viewer-btn-outer toolbar" v-if="isToolbarOpen" v-show="isSkinInitialized">
+        <div id="viewer-flipl" class="viewer-btn btn" value="filpL" v-bind:style="{visibility:visibilityFlipL}" v-touch:tap="flipL" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+            <span class="icon"></span>
+        </div>
+    </div>
+    <div id="viewer-flipr-outer" class="header-space footer-space bottomside-space noprintpage viewer-btn-outer toolbar" v-if="isToolbarOpen" v-show="isSkinInitialized">
+        <div id="viewer-flipr" class="viewer-btn btn" value="flipR" v-bind:style="{visibility:visibilityFlipR}" v-touch:tap="flipR" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+            <span class="icon"></span>
+        </div>
+    </div>
+
+    
+    <div id="libra-memo-modal" class="noprintpage modal-mask" v-show="libraMemoNoLoginModal" transition="modal" v-on:touchstart.prevent.stop v-on:touchmove.prevent.stop v-on:touchend.prevent.stop>
+        <div class="modal-wrapper">
+            <div class="modal-container">
+
+                <div class="modal-body">{{words.LibraMemoNoLoginMessage}}</div>
+
+                <div class="buttonbar">
+                    <div class="buttonbar-box left">
+                        <div class="cancel-btn" class="btn-bg" v-touch:tap="onClickLibraMemoNoLoginModalCancel" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.Cancel}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttonbar-box right">
+                        <div class="save-btn" class="btn-bg" v-touch:tap="onClickLibraMemoNoLoginModalOK" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.OK}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="fusen-delete-modal" class="noprintpage modal-mask" v-show="fusenDeleteModal" transition="modal" v-on:touchstart.prevent.stop v-on:touchmove.prevent.stop v-on:touchend.prevent.stop>
+        <div class="modal-wrapper">
+            <div class="modal-container">
+
+                <div class="modal-body">{{words.FusenDeleteConfirm}}</div>
+
+                <div class="buttonbar">
+                    <div class="buttonbar-box left">
+                        <div class="cancel-btn" class="btn-bg" v-touch:tap="onClickFusenDeleteModalCancel" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.Cancel}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttonbar-box right">
+                        <div class="save-btn" class="btn-bg" v-touch:tap="onClickFusenDeleteModalOK" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.OK}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="tegaki-delete-modal" class="noprintpage modal-mask" v-show="tegakiDeleteModal" transition="modal" v-on:touchstart.prevent.stop v-on:touchmove.prevent.stop v-on:touchend.prevent.stop>
+        <div class="modal-wrapper">
+            <div class="modal-container">
+
+                <div class="modal-body">{{words.TegakiDeleteConfirm}}</div>
+
+                <div class="buttonbar skin-common">
+                    <div class="buttonbar-box left">
+                        <div class="cancel-btn" class="btn-bg" v-touch:tap="onClickTegakiDeleteModalCancel($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.Cancel}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttonbar-box right">
+                        <div class="save-btn" class="btn-bg" v-touch:tap="onClickTegakiDeleteModalOK($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.OK}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    <div id="print-modal" class="noprintpage modal-mask" v-show="isPrintModalOpen" transition="modal">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+
+                <div class="modal-body">
+                    <div class="print-option">
+                        <label class="print-option-title">{{words.Print}}</label>
+                        <ul>
+                            <li class="textinput" v-if="soMultiplePagesPrint">
+                                <span class="print-option-page">
+                                    <span>{{words.PrintPageLabel}}</span>
+                                    <input id="print-option-startpage" title="start page" type="text" name="print-option-startpage" v-model="printStartPage" pattern="\d*" v-on:change="changePrintStartPage($event)">
+                                    <span> - </span>
+                                    <input id="print-option-endpage" title="end page" type="text" name="print-option-endpage" v-model="printEndPage" pattern="\d*" v-on:change="changePrintEndPage($event)">
+                                </span>
+                            </li>
+                            
+                            <li class="checkbox" v-if="allowMemo">
+                                <label for="print-option-tegaki">
+                                    <input id="print-option-tegaki" type="checkbox" name="print-option-tegaki" value="tegaki" checked="checked" v-model="checkedPrintOptions"><span class="label-text">{{words.PrintOptionFuseTegaki}}</span>
+                                </label>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="buttonbar">
+                    <div class="buttonbar-box left">
+                        <div class="cancel-btn" class="btn-bg" v-touch:tap="onClickPrintModalCancel($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.Cancel}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttonbar-box right">
+                        <div class="save-btn" class="btn-bg" v-touch:tap="onClickPrintModalOK($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.OK}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="pdf-link-modal" class="noprintpage modal-mask" transition="modal" v-if="isPDFLinkModal" v-on:touchstart.prevent.stop v-on:touchmove.prevent.stop v-on:touchend.prevent.stop>
+        <div class="modal-wrapper" v-touch:tap="onClickPDFOutside($event)">
+            <div class="modal-container">
+
+                <div class="modal-body">{{words.PdfChoice}}</div>
+
+                <div class="buttonbar skin-common">
+                    <div class="buttonbar-box left">
+                        <div class="save-btn" class="btn-bg" v-touch:tap="onClickPDFLeft($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.PdfChoiceLeft}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttonbar-box right">
+                        <div class="save-btn" class="btn-bg" v-touch:tap="onClickPDFRight($event)" v-on:touchstart="buttonTouchStart($event)" v-on:touchmove="buttonTouchMove($event)" v-on:touchend="buttonTouchEnd($event)">
+                            <div class="btn">
+                                <span>{{words.PdfChoiceRight}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="print-message">{{words.PrintMessageMobile}}</div>
+    
+
+    
+
+</div>
+
+<!--cordovatarget-->
+<script type="text/javascript" src="./html5/js/flipper.js?c=20250703163053" charset="utf-8"></script>
+<script type="text/javascript" src="./html5/js/skin-m.js?c=20250703163053" charset="utf-8"></script>
+
+</body>
+</html>

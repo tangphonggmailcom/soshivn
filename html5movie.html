@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<title>総合案内_ベトナム語版_デジパン用</title>
+
+<meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache, no-store">
+<meta http-equiv="expires" content="0">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script src="./html5/js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./html5/js/lwUACheck.js" type="text/javascript" charset="utf-8"></script>
+
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+img, video {
+    touch-callout:none;
+    user-select:none;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-touch-callout:none;
+    -moz-user-select:none;
+}
+
+video {
+    position: absolute;
+    margin: auto;
+    background-color: #333;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.btn-close {
+    top: 5px;
+    right: 5px;
+    display: none;
+    vertical-align: middle;
+    zoom: 1;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    z-index: 100;
+}
+
+.btn-close:hover {
+    cursor: pointer;
+}
+
+.btn-close::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.btn-close::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.btn-close::before, .btn-close::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    width: 16px;
+    height: 2px;
+    background-color: #000;
+}
+
+</style>
+
+<script>
+$(function(){
+    var videoWidth;
+    var videoHeight;
+    var uaCheck = new lwUACheck();
+
+    function getUrlParameter(key) {
+        var query = document.location.search.substring(1);
+        var parameters = query.split('&');
+        for (var i = 0; i < parameters.length; i++) {
+            var element = parameters[i].split('=');
+
+            if (element[0] === key) {
+                return element[1] === undefined ? true : decodeURIComponent(element[1]);
+            }
+        }
+    }
+
+    if ((uaCheck.isAndroid || uaCheck.isiOS) && window.opener) {
+        $('.btn-close').show();
+        $('.btn-close').on('click', function(){
+            window.close();
+        });
+    }
+
+    // FLP-424 flv は movie にフォルダー名に変更
+    var c = new Date/1000|0;
+    var filepath = './movie/' + getUrlParameter('v') + '?c=' + c;
+
+    $('video')
+        .attr('src', '')
+        .attr('src', filepath)
+        .bind('loadedmetadata', function () {
+            videoWidth = this.videoWidth;
+            videoHeight = this.videoHeight;
+
+            $(window).resize();
+        });
+
+    $(window).resize(function() {
+        var w = $(window).width();
+        var h = $(window).height();
+
+        if (w < videoWidth) {
+            $('video').css('width', w);
+        }
+        if (h < videoHeight) {
+            $('video').css('height', h);
+        }
+    });
+
+    document.oncontextmenu = function() {
+        return false;
+    };
+});
+
+window.onbeforeunload = function(e) {
+  var video = document.getElementById('video')
+  video.pause()
+  video.src = ''
+}
+</script>
+</head>
+<body>
+<!--version 5.0.13 -->
+
+<span class="btn-close"></span>
+
+<video id="video" playsinline controls controlslist="nodownload"></video>
+
+</body>
+</html>
