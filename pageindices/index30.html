@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>総合案内_ベトナム語版_デジパン用</title>
+    <style>
+        [v-cloak] { display:none }
+    </style>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+</head>
+<body id="skin" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<div id="thumbnail-and-pager">
+    <div id="flipper-app" bookpath="../" forcedstartpage="30">
+        <div id="flipper-component">
+            <component v-bind:is="view" v-ref:view></component>
+        </div>
+    </div>
+    <div id="pager">
+        <img v-on:click="flipL" v-bind:src="leftImageSource" class="pager-left" alt="">
+        <img v-on:click="flipR" v-bind:src="rightImageSource" class="pager-right"alt="">
+    </div>
+</div>
+
+<div id="box_main">
+    <div id="box_text">
+        <h1>
+            <div id="bookTitle">
+                総合案内_ベトナム語版_デジパン用
+            </div>30/52
+        </h1>
+
+        <div>
+            <p id="searchText" v-el:search>
+            Khu trường sở của chúng tôi nằm ở trung tâm của thủ đô Tokyo, Musashino City, nơi vô số nghệ sĩ, doanh nhân và học giả cư trú.Tiếp sức cho sinh viên, nâng tầm họ lên thành nghệ sĩ đẳng cấp thế giới Là cửa ngõ bước vào nghiên cứu nghệ thuật tại các trường đại học hàng đầu30Cao đẳng nghệ thuật MusashinoTrong thế giới toàn cầu hóa hiện nay, các hoạt động giao lưu văn hóa và nghệ thuật ngày càng tăng. Hiện đang có nhu cầu cao về những tài năng trẻ có thể góp phần thúc đẩy nghệ thuật ở đấu trường quốc tế. Trường cao đẳng nghệ thuật Musashino đào tạo những nghệ sĩ mới nổi, dùng bốn từ khóa cho việc phát triển kỹ năng của họ: toàn cầu hóa, sáng tạo, giao tiếp và nghệ thuật. Chúng tôi đã bắt đầu sáng kiến mới, chẳng hạn như các chương trình liên kết với Đại học nghệ thuật Tama và Đại học nghệ thuật Musashino, để chúng tôi có thể đào tạo ra những sinh viên tốt nghiệp đi đầu các lĩnh vực mỹ thuật tương ứng của mình.CAO ĐẲNG NGHỆ THUẬTMUSASHINO
+            </p>
+        </div>
+
+        <p class="moto">
+            元のページ&nbsp;
+            <a href="../index.html#30">../index.html#30</a>
+        </p>
+    </div>
+    <div id="box_book">
+        <p class="textr">
+            <a href='../index.html#page=30'>このブックを見る</a><br />
+        </p>
+
+        <div id="content" align="center">
+
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../html5/js/flipper.js?c=20250703163053" charset="utf-8"></script>
+<script type="text/javascript" src="skin.js" charset='utf-8'></script>
+</body>
+</html>
