@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* css 5.0.11 Copyright (c) 2016 LOGOSWARE */
+
+/*
+#header {
+  display: block;
+  height: 40px;
+}
+
+#header-color {
+  background-color: #ffffff;
+}
+
+.header-space {
+  top: 40px;
+}
+*/
+
+
+#footer-color {
+  background-color: #414b4f;
+}
+
+.slidemenu-m .slidemenu-titlebar {
+  background-color: #414b4f;
+}
+
+#flipper-component {
+  background-color: #f5f5f5;
+}
+
+.slidemenu, .slidemenu-titlebar {
+  color: #ffffff;
+  background-color: #777d81;
+}
+
+.panel {
+  color: #ffffff;
+  background-color: #777d81;
+}
+
+.panel-balloon:after {
+  border-bottom-color: #777d81;
+}
+
+.color-btn, .slidemenu .color-btn, #list-slidemenu .color-btn, #footer .color-btn {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.hover .color-btn, .slidemenu .hover .color-btn, #list-slidemenu .hover .color-btn, #footer .hover .color-btn {
+  color: #ffffff;
+  background-color: #ed5153;
+}
+
+.active .color-btn, .slidemenu .active .color-btn, #list-slidemenu .active .color-btn, #footer .active .color-btn {
+  color: #ffffff;
+  background-color: #c1392b;
+}
+
+.hover .color-item, .slidemenu .hover .color-item, #list-slidemenu .hover .color-item, #footer .hover .color-item  {
+  color: #ffffff;
+  background-color: #ed5153;
+}
+
+.active .color-item, .slidemenu .active .color-item, #list-slidemenu .active .color-item, #footer .active .color-item {
+  color: #ffffff;
+  background-color: #c1392b;
+}
+
+
+

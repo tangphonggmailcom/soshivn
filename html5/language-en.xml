@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<word>
+  <text name="Version"><![CDATA[5.0.13]]></text>
+  <text name="Search"><![CDATA[Search]]></text>
+  <text name="List"><![CDATA[Table of contents]]></text>
+  <text name="Pdf"><![CDATA[PDF]]></text>
+  <text name="FlipLMax"><![CDATA[To the far left]]></text>
+  <text name="FlipL"><![CDATA[To the left]]></text>
+  <text name="FlipR"><![CDATA[To the right]]></text>
+  <text name="FlipRMax"><![CDATA[Most to the right]]></text>
+  <text name="Zoomin"><![CDATA[Zoom in]]></text>
+  <text name="Zoomout"><![CDATA[Zoom out]]></text>
+  <text name="Print"><![CDATA[Printing]]></text>
+  <text name="Share"><![CDATA[Share]]></text>
+  <text name="Text"><![CDATA[Text]]></text>
+  <text name="Fusen"><![CDATA[Tag]]></text>
+  <text name="Tegaki"><![CDATA[Pen]]></text>
+  <text name="Delete"><![CDATA[Delete]]></text>
+  <text name="Close"><![CDATA[Close up]]></text>
+  <text name="Textindex"><![CDATA[Table of contents]]></text>
+  <text name="Thumbnail"><![CDATA[Page list]]></text>
+  <text name="PdfChoice"><![CDATA[Do you want to open one of the PDF?]]></text>
+  <text name="PdfChoiceLeft"><![CDATA[Left]]></text>
+  <text name="PdfChoiceRight"><![CDATA[Right]]></text>
+  <text name="FusenList"><![CDATA[Tag List]]></text>
+  <text name="OK"><![CDATA[OK]]></text>
+  <text name="Cancel"><![CDATA[Cancel]]></text>
+  <text name="Help"><![CDATA[Help]]></text>
+  <text name="SearchAnd"><![CDATA[AND]]></text>
+  <text name="SearchOr"><![CDATA[OR]]></text>
+  <text name="SearchType"><![CDATA[Retrieval method]]></text>
+  <text name="SearchResultNomatch"><![CDATA[Information that matches the keyword was not found.]]></text>
+  <text name="More"><![CDATA[more...]]></text>
+  <text name="And"><![CDATA[ & ]]></text>
+  <text name="ShareUrl"><![CDATA[URL]]></text>
+  <text name="ShareText"><![CDATA[Text]]></text>
+  <text name="ShareDictionary"><![CDATA[Dictionary]]></text>
+  <text name="ShareSearchDictionary"><![CDATA[Look in the dictionary]]></text>
+  <text name="ShareEmbed"><![CDATA[Embed]]></text>
+  <text name="ShareMessage"><![CDATA[You can select a range by tracing the book.]]></text>
+  <text name="FusenDeleteConfirm"><![CDATA[You want to remove this tag . is it OK?]]></text>
+  <text name="LibraDeleteError"><![CDATA[Delete failed. Please try again later.]]></text>
+  <text name="FusenCancelConfirm"><![CDATA[Cancel the editing of the tag. Is it OK?]]></text>
+  <text name="TegakiDeleteConfirm"><![CDATA[Delete all of the handwritten data of this page . is it OK?]]></text>
+  <text name="TegakiStraightLineMessage"><![CDATA[When the mouse while holding down the shift key straight line (vertical and horizontal) will draw (PC only)]]></text>
+  <text name="FuseTegakiLayerHide"><![CDATA[To hide the sticky handwritten]]></text>
+  <text name="FuseTegakiLayerShow"><![CDATA[To view the sticky handwritten]]></text>
+  <text name="PrintPageLabel"><![CDATA[Page designation]]></text>
+  <text name="PrintErrorStart"><![CDATA[Start page is incorrect]]></text>
+  <text name="PrintErrorEnd"><![CDATA[Exit page is incorrect]]></text>
+  <text name="PrintErrorStartEnd"><![CDATA[Start page and end page is incorrect]]></text>
+  <text name="PrintLargeInfo"><![CDATA[If the number of printed pages is large, it may not be correctly printed, it may take some time.
+If you can not print, please print by reducing the number of pages.]]></text>
+  <text name="PrintMessagePC"><![CDATA[Please print from the operation button below.
+If when there is no print button is prohibited printing.]]></text>
+  <text name="PrintMessageMobile"><![CDATA[Please print from the menu button in the upper right-hand corner of the 3 main line.
+If when there is no print button is prohibited printing.]]></text>
+  <text name="PrintOptionFuseTegaki"><![CDATA[To print your handwritten notes, sticky]]></text>
+  <text name="PrintWindowAndroidMessage"><![CDATA[Now you are ready to print. Please print from the print menu.]]></text>
+  <text name="PrintWindowIEMessage"><![CDATA[Now you are ready to print. Please print from the top right corner of the gear mark> Print> Print Preview.]]></text>
+  <text name="PrintWindowCloseWindow"><![CDATA[Close the print screen]]></text>
+  <text name="PrintWindowIgnoreMessage"><![CDATA[This page has been prohibited printing]]></text>
+  <text name="LibraMemoNoLoginMessage"><![CDATA[Please login to make a note. Do you want to go to the login page?]]></text>
+  <text name="BrowserMessagePrivate"><![CDATA[For private mode is ON, you can not save the information in the handwritten memo sticky. Please use to OFF.]]></text>
+  <text name="LocalStorageExceeded"><![CDATA[If it were a secret mode (private mode), or storage area of ​​the handwritten notes, sticky note is not enough. Do you want to open the management screen of LocalStorage?]]></text>
+  <text name="SSConfirmStartPage"><![CDATA[Do you want to open from the last displayed page?]]></text>
+  <text name="SSCompleteContents"><![CDATA[Data transmission succeeded.]]></text>
+  <text name="SSCompleteContentsFail"><![CDATA[Error occurred during data transmission. Do you resend?]]></text>
+  <text name="SSCompleteNextTime"><![CDATA[It will be resent during next booting]]></text>
+</word>

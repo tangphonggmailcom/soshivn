@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<word>
+  <text name="Version"><![CDATA[5.0.13]]></text>
+  <text name="Search"><![CDATA[検索]]></text>
+  <text name="List"><![CDATA[目次]]></text>
+  <text name="Pdf"><![CDATA[PDF]]></text>
+  <text name="FlipLMax"><![CDATA[一番左へ]]></text>
+  <text name="FlipL"><![CDATA[左へ]]></text>
+  <text name="FlipR"><![CDATA[右へ]]></text>
+  <text name="FlipRMax"><![CDATA[一番右へ]]></text>
+  <text name="Zoomin"><![CDATA[拡大]]></text>
+  <text name="Zoomout"><![CDATA[縮小]]></text>
+  <text name="Print"><![CDATA[印刷]]></text>
+  <text name="Share"><![CDATA[共有]]></text>
+  <text name="Text"><![CDATA[テキスト]]></text>
+  <text name="Fusen"><![CDATA[付箋]]></text>
+  <text name="Tegaki"><![CDATA[ペン]]></text>
+  <text name="Delete"><![CDATA[削除]]></text>
+  <text name="Close"><![CDATA[閉じる]]></text>
+  <text name="Textindex"><![CDATA[目次]]></text>
+  <text name="Thumbnail"><![CDATA[ページ一覧]]></text>
+  <text name="PdfChoice"><![CDATA[どちらのPDFを開きますか？]]></text>
+  <text name="PdfChoiceLeft"><![CDATA[左]]></text>
+  <text name="PdfChoiceRight"><![CDATA[右]]></text>
+  <text name="FusenList"><![CDATA[付箋一覧]]></text>
+  <text name="OK"><![CDATA[OK]]></text>
+  <text name="Cancel"><![CDATA[キャンセル]]></text>
+  <text name="Help"><![CDATA[ヘルプ]]></text>
+  <text name="SearchAnd"><![CDATA[AND]]></text>
+  <text name="SearchOr"><![CDATA[OR]]></text>
+  <text name="SearchType"><![CDATA[検索方法]]></text>
+  <text name="SearchResultNomatch"><![CDATA[キーワードに一致する情報は見つかりませんでした。]]></text>
+  <text name="More"><![CDATA[more...]]></text>
+  <text name="And"><![CDATA[ & ]]></text>
+  <text name="ShareUrl"><![CDATA[URL]]></text>
+  <text name="ShareText"><![CDATA[テキスト選択]]></text>
+  <text name="ShareDictionary"><![CDATA[辞書]]></text>
+  <text name="ShareSearchDictionary"><![CDATA[辞書で調べる]]></text>
+  <text name="ShareEmbed"><![CDATA[埋め込みコード]]></text>
+  <text name="ShareMessage"><![CDATA[ブックをなぞって範囲を選択できます。]]></text>
+  <text name="FusenDeleteConfirm"><![CDATA[この付箋を削除します。よろしいですか？]]></text>
+  <text name="LibraDeleteError"><![CDATA[削除に失敗しました。しばらくしてからもう一度お試しください。]]></text>
+  <text name="FusenCancelConfirm"><![CDATA[付箋の編集をキャンセルします。よろしいですか？]]></text>
+  <text name="TegakiDeleteConfirm"><![CDATA[このページの手書きデータをすべて削除します。よろしいですか？]]></text>
+  <text name="TegakiStraightLineMessage"><![CDATA[シフトキーを押しながらマウス操作すると直線（縦・横）が描けます（パソコンのみ）]]></text>
+  <text name="FuseTegakiLayerHide"><![CDATA[付箋・手書きを非表示にする]]></text>
+  <text name="FuseTegakiLayerShow"><![CDATA[付箋・手書きを表示する]]></text>
+  <text name="PrintPageLabel"><![CDATA[ページ指定]]></text>
+  <text name="PrintErrorStart"><![CDATA[開始ページが正しくありません]]></text>
+  <text name="PrintErrorEnd"><![CDATA[終了ページが正しくありません]]></text>
+  <text name="PrintErrorStartEnd"><![CDATA[開始ページと終了ページが正しくありません]]></text>
+  <text name="PrintLargeInfo"><![CDATA[印刷ページ数が多い場合、正しく印刷ができなかったり、時間がかかる場合があります。
+印刷できなかった場合は、ページ数を減らして印刷してください。]]></text>
+  <text name="PrintMessagePC"><![CDATA[下の操作ボタンから印刷してください。
+もし印刷ボタンがないときは印刷が禁止されています。]]></text>
+  <text name="PrintMessageMobile"><![CDATA[右上の3本線のメニューボタンから印刷してください。
+もし印刷ボタンがないときは印刷が禁止されています。]]></text>
+  <text name="PrintOptionFuseTegaki"><![CDATA[手書きメモ・付箋を印刷する]]></text>
+  <text name="PrintWindowAndroidMessage"><![CDATA[印刷する準備ができました。印刷メニューから印刷してください。]]></text>
+  <text name="PrintWindowIEMessage"><![CDATA[印刷する準備ができました。右上の歯車マーク ＞ 印刷 ＞ 印刷プレビューから印刷してください。]]></text>
+  <text name="PrintWindowCloseWindow"><![CDATA[この印刷用画面を閉じる]]></text>
+  <text name="PrintWindowIgnoreMessage"><![CDATA[このページは印刷が禁止されています]]></text>
+  <text name="LibraMemoNoLoginMessage"><![CDATA[ペン・付箋を使用するにはログインが必要です。ログインページへ移動しますか？]]></text>
+  <text name="BrowserMessagePrivate"><![CDATA[プライベートモードがONのため、手書きメモ・付箋の情報を保存する事ができません。OFFにしてご利用下さい。]]></text>
+  <text name="LocalStorageExceeded"><![CDATA[シークレットモード（プライベートモード）であるか、または手書きメモ・付箋の保存領域が足りません。LocalStorageの管理画面を開きますか？]]></text>
+  <text name="SSConfirmStartPage"><![CDATA[最後に表示したページから開きますか？]]></text>
+  <text name="SSCompleteContents"><![CDATA[データ送信に成功しました。]]></text>
+  <text name="SSCompleteContentsFail"><![CDATA[データ送信に失敗しました。再送しますか？]]></text>
+  <text name="SSCompleteNextTime"><![CDATA[次回起動時に再送されます]]></text>
+</word>

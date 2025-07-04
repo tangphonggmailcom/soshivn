@@ -1,0 +1,510 @@
+// FS SCORM - ADL SCORM 1.2 用の fscommand アダプタと Flash MX 2004 相互学習システム
+// バージョン 1.0    08/19/03
+// Modified by Andrew Chemey, Macromedia
+// FS SCORM アダプタバージョン1.2.4 に基づく :
+// 		Fragments Copyright 2002 Pathlore Software Corporation All rights Reserved
+// 		Fragments Copyright 2002 Macromedia Inc. All rights reserved.
+// 		Fragments Copyright 2003 Click2learn, Inc. All rights reserved.
+// 		Developed by Tom King, Macromedia,
+// 		             Leonard Greenberg, Pathlore,
+// 		             and Claude Ostyn, Click2learn, Inc.
+// 		Includes code by Jeff Burton and Andrew Chemey, Macromedia (01/09/02)
+// -----------------------------------------------------------------
+// これらのプリセット値は好みと要件に合わせて変更してください。
+var g_bShowApiErrors = false; 	// エラーメッセージを表示する場合は true に変更
+var g_bInitializeOnLoad = true; // HTML ページのロード時に LMS を初期化しない場合は false に変更
+// g_bShowApiErrors が true の場合にこれらのストリングを変換
+// アプリケーションをローカライズする必要もあります
+var g_strAPINotFound = "Management system interface not found.";
+var g_strAPITooDeep = "Cannot find API - too deeply nested.";
+var g_strAPIInitFailed = "Found API but LMSInitialize failed.";
+var g_strAPISetError = "Trying to set value but API not available.";
+var g_strFSAPIError = 'LMS API adapter returned error code: "%1"\nWhen FScommand called API.%2\nwith "%3"';
+var g_strDisableErrorMsgs = "Select cancel to disable future warnings.";
+// LMSFinish の呼び出し時にステータスを自動的に完了済みに設定する場合は、
+// g_bSetCompletedAutomatically を true に変更します。通常、
+// Flash ムービーそのものがステータスを "完了済み"、"処理済み"、"失敗"
+// (どちらも "完了済み" を示す) にするために FSCommand を送信して、完了ステータスを設定した場合、
+// このフラッグは false のままです
+var g_bSetCompletedAutomatically = false;
+// この値は通常 LMS により指定されますが、この場合は異なります
+// これが、処理済/失敗の判定に使用されるデフォルト値です。
+// Flash の Actionscript が処理済/失敗の判定に独自のメソッドを使用している場合は、
+// これを null に設定し、それ以外の場合は 0 ～ 1 の範囲で値を設定します
+// (浮動小数の値たとえば "0.75" のこともあります
+var g_SCO_MasteryScore = null; // 許容値 : 0.0 ～ 1.0、または null
+//==================================================================
+// 警告!!!
+// 具体的な処理内容が明確にわかっていない限り、
+// この行より下の部分は一切変更しないでください!
+// これらの 2 つの値は、Flash テンプレートのプリセットの基本となるため、
+// 変更しないでください。
+var g_nSCO_ScoreMin = 0; 		// 数値でなければなりません
+var g_nSCO_ScoreMax = 100; 		// nSCO_Score_Min より大きい数値でなければなりません
+// LMS で指定されるマスタースコアがある場合は、合格/不合格の判断を
+// するときスコアを解釈する必要があるかどうかの判断において、
+// そのマスタースコアが SCORM 仕様に基づいて SCO より優先されます。
+// テンプレートはマスタースコアの取得を試み、取得が可能な場合は
+// それに従って、SCO がスコアを送信するときにステータスを
+// 合格または不合格に設定します。実際には、SCO が終了するまで 
+// LMS はこの決定を行いません。
+// このフラグのデフォルト値は true です。LMS が合格/不合格の
+// ステータスをマスタースコアに基づいて設定する方法を予測しない
+// 場合には、false に設定します (最終的には LMS が勝ちます)。
+var g_bInterpretMasteryScore = false;
+// このスクリプトにより、SCO の一般的な論理ビヘイビアの
+// さまざまな特徴を実行します。
+/////////// API インターフェイスの初期化とキャッチャー関数 ////////
+var g_nFindAPITries = 0;
+var g_objAPI = null;
+var g_bInitDone = false;
+var g_bFinishDone = false;
+var	g_bSCOBrowse = false;
+var g_dtmInitialized = new Date(); // 初期化後に調整されます
+var g_bMasteryScoreInitialized = false;
+//---
+var onloadFlg = false;
+//---
+
+function AlertUserOfAPIError(strText) {
+	if (g_bShowApiErrors) {
+		var s = strText + "\n\n" + g_strDisableErrorMsgs;
+		if (!confirm(s)){
+			g_bShowApiErrors = false;
+		}
+	}
+}
+function ExpandString(s){
+	var re = new RegExp("%","g");
+	for (i = arguments.length-1; i > 0; i--){
+		s2 = "%" + i;
+		if (s.indexOf(s2) > -1){
+			re.compile(s2,"g");
+			s = s.replace(re, arguments[i]);
+		}
+	}
+	return s;
+}
+/**
+ * SCORM API検索
+ * 
+ */
+function FindAPI(win) {
+	while ((win.API == null) && (win.parent != null) && (win.parent != win)) {
+		g_nFindAPITries ++;
+		if (g_nFindAPITries > 500) {
+			AlertUserOfAPIError(g_strAPITooDeep);
+			return null;
+		}
+		win = win.parent;
+	}
+	return win.API;
+}
+function APIOK() {
+	return ((typeof(g_objAPI)!= "undefined") && (g_objAPI != null));
+}
+
+/**
+ * 初期処理
+ * 
+ */
+function SCOInitialize() {
+	var err = true;
+	if (!g_bInitDone) {
+		if ((window.parent) && (window.parent != window)){
+			g_objAPI = FindAPI(window.parent);
+		}
+		if ((g_objAPI == null) && (window.opener != null))	{
+			g_objAPI = FindAPI(window.opener);
+		}
+		if ((g_objAPI == null) && (window.parent) && (window.parent.opener) && (window.parent.opener != window)){
+			g_objAPI = FindAPI(window.parent.opener);
+		}
+		if (!APIOK()) {
+			AlertUserOfAPIError(g_strAPINotFound);
+			err = false;
+		} else {
+			err = g_objAPI.LMSInitialize("");
+			if (err == "true") {
+				g_bSCOBrowse = (g_objAPI.LMSGetValue("cmi.core.lesson_mode") == "browse");
+				if (!g_bSCOBrowse) {
+					if (g_objAPI.LMSGetValue("cmi.core.lesson_status") == "not attempted") {
+						err = g_objAPI.LMSSetValue("cmi.core.lesson_status","incomplete");
+					}
+				}
+                try{
+                    scormInitilaized();
+                }catch(e){
+                }
+			} else {
+				AlertUserOfAPIError(g_strAPIInitFailed);
+			}
+			//---
+			onloadFlg = true;
+			//---
+		}
+		if (typeof(SCOInitData) != "undefined") {
+			// SCOInitData 関数を他のスクリプトの SCO で定義できます
+			SCOInitData();
+		}
+		g_dtmInitialized = new Date();
+	}
+	g_bInitDone = true;
+	return (err + ""); // 強制的にストリング型にする
+}
+function SCOFinish() {
+	if ((APIOK()) && (g_bFinishDone == false)) {
+		SCOReportSessionTime();
+		if (g_bSetCompletedAutomatically){
+			SCOSetStatusCompleted();
+		}
+		if (typeof(SCOSaveData) != "undefined"){
+			// SCOSaveData 関数を他のスクリプトの SCO で定義できます
+			SCOSaveData();
+		}
+        SCOCommit();
+
+        g_bFinishDone = (g_objAPI.LMSFinish("") == "true");
+	}
+	return (g_bFinishDone + "" ); // 強制的にストリング型にする
+}
+// API アダプタを直接呼び出すのではなく、これらのキャッチャー関数を呼び出してください
+function SCOGetValue(nam)		{return ((APIOK())?g_objAPI.LMSGetValue(nam.toString()):"")}
+function SCOCommit()			{return ((APIOK())?g_objAPI.LMSCommit(""):"false")}
+function SCOGetLastError()		{return ((APIOK())?g_objAPI.LMSGetLastError():"-1")}
+function SCOGetErrorString(n)	{return ((APIOK())?g_objAPI.LMSGetErrorString(n):"No API")}
+function SCOGetDiagnostic(p)	{return ((APIOK())?g_objAPI.LMSGetDiagnostic(p):"No API")}
+//LMSSetValue は以下の複雑なデータ管理ロジックで
+//実行されます
+var g_bMinScoreAcquired = false;
+var g_bMaxScoreAcquired = false;
+// 特別なロジックがここから始まります
+function SCOSetValue(nam,val){
+	var err = "";
+	if (!APIOK()){
+			AlertUserOfAPIError(g_strAPISetError + "\n" + nam + "\n" + val);
+			err = "false"
+	} else if (nam == "cmi.core.score.raw") err = privReportRawScore(val);
+	if (err == ""){
+			err = g_objAPI.LMSSetValue(nam,val.toString() + "");
+			if (err != "true") return err;
+	}
+	if (nam == "cmi.core.score.min"){
+		g_bMinScoreAcquired = true;
+		g_nSCO_ScoreMin = val;
+	}
+	else if (nam == "cmi.core.score.max"){
+		g_bMaxScoreAcquired = true;
+		g_nSCO_ScoreMax = val;
+	}
+	return err;
+}
+function privReportRawScore(nRaw) { // SCOSetValue でのみ呼び出し
+	if (isNaN(nRaw)) return "false";
+	if (!g_bMinScoreAcquired){
+		if (g_objAPI.LMSSetValue("cmi.core.score.min",g_nSCO_ScoreMin+"")!= "true") return "false";
+	}
+	if (!g_bMaxScoreAcquired){
+		if (g_objAPI.LMSSetValue("cmi.core.score.max",g_nSCO_ScoreMax+"")!= "true") return "false";
+	}
+	if (g_objAPI.LMSSetValue("cmi.core.score.raw", nRaw)!= "true") return "false";
+	g_bMinScoreAcquired = false;
+	g_bMaxScoreAcquired = false;
+	if (!g_bMasteryScoreInitialized){
+		var nMasteryScore = parseInt(SCOGetValue("cmi.student_data.mastery_score"),10);
+		if (!isNaN(nMasteryScore)) g_SCO_MasteryScore = nMasteryScore;
+	}
+  	if ((g_bInterpretMasteryScore)&&(!isNaN(g_SCO_MasteryScore))){
+    	var stat = (nRaw >= g_SCO_MasteryScore? "passed" : "failed");
+    	if (SCOSetValue("cmi.core.lesson_status",stat) != "true") return "false";
+  	}
+  	return "true";
+}
+function MillisecondsToCMIDuration(n) {
+//期間をミリ秒から 0000:00:00.00 の形式に変換
+	var hms = "";
+	var dtm = new Date();	dtm.setTime(n);
+	var h = "000" + Math.floor(n / 3600000);
+	var m = "0" + dtm.getMinutes();
+	var s = "0" + dtm.getSeconds();
+	var cs = "0" + Math.round(dtm.getMilliseconds() / 10);
+	hms = h.substr(h.length-4)+":"+m.substr(m.length-2)+":";
+	hms += s.substr(s.length-2)+"."+cs.substr(cs.length-2);
+	return hms;
+}
+// SCOReportSessionTime はこのスクリプトにより自動的に呼び出されますが、
+// いつでも SCO から呼び出すことができます
+function SCOReportSessionTime() {
+	var dtm = new Date();
+	var n = dtm.getTime() - g_dtmInitialized.getTime();
+	return SCOSetValue("cmi.core.session_time",MillisecondsToCMIDuration(n));
+}
+// SCO のデザイナーでなければ完了済みの定義がわからないため、SCO の別のスクリプトが
+// この関数を呼び出して完了済みのステータスを設定することがあります。
+// この関数は、SCO が参照モードになっていないことを確認し、"完了済み" であることを示す  
+// "処理済" および "失敗" に影響を与えることがないようにします。
+function SCOSetStatusCompleted(){
+	var stat = SCOGetValue("cmi.core.lesson_status");
+	if (SCOGetValue("cmi.core.lesson_mode") != "browse"){
+		if ((stat!="completed") && (stat != "passed") && (stat != "failed")){
+			return SCOSetValue("cmi.core.lesson_status","completed");
+		}
+	} else return "false";
+}
+// 客観的な管理ロジック
+function SCOSetObjectiveData(id, elem, v) {
+	var result = "false";
+	var i = SCOGetObjectiveIndex(id);
+	if (isNaN(i)) {
+		i = parseInt(SCOGetValue("cmi.objectives._count"));
+		if (isNaN(i)) i = 0;
+		if (SCOSetValue("cmi.objectives." + i + ".id", id) == "true"){
+			result = SCOSetValue("cmi.objectives." + i + "." + elem, v);
+		}
+	} else {
+		result = SCOSetValue("cmi.objectives." + i + "." + elem, v);
+		if (result != "true") {
+			// この LMS はジャーナルエントリのみを受け取ります
+			i = parseInt(SCOGetValue("cmi.objectives._count"));
+			if (!isNaN(i)) {
+				if (SCOSetValue("cmi.objectives." + i + ".id", id) == "true"){
+					result = SCOSetValue("cmi.objectives." + i + "." + elem, v);
+				}
+			}
+		}
+	}
+	return result;
+}
+function SCOGetObjectiveData(id, elem) {
+	var i = SCOGetObjectiveIndex(id);
+	if (!isNaN(i)) {
+		return SCOGetValue("cmi.objectives." + i + "."+elem);
+	}
+	return ""
+}
+function SCOGetObjectiveIndex(id){
+	var i = -1;
+	var nCount = parseInt(SCOGetValue("cmi.objectives._count"));
+	if (!isNaN(nCount)) {
+		for (i = nCount-1; i >= 0; i--){ // LMS がジャーナルを実行する場合に備えて戻る
+			if (SCOGetValue("cmi.objectives." + i + ".id") == id) {
+				return i;
+			}
+		}
+	}
+	return NaN
+}
+// AICC と互換性のあるトークンや略語を SCORM のトークンに変換するための関数
+function AICCTokenToSCORMToken(strList,strTest){
+	var a = strList.split(",");
+	var c = strTest.substr(0,1).toLowerCase();
+	for (i=0;i<a.length;i++){
+			if (c == a[i].substr(0,1)) return a[i];
+	}
+	return strTest;
+}
+function normalizeStatus(status){
+	return AICCTokenToSCORMToken("completed,incomplete,not attempted,failed,passed", status);
+}
+function normalizeInteractionType(theType){
+	return AICCTokenToSCORMToken("true-false,choice,fill-in,matching,performance,sequencing,likert,numeric", theType);
+}
+function normalizeInteractionResult(result){
+	return AICCTokenToSCORMToken("correct,wrong,unanticipated,neutral", result);
+}
+// Internet Explorer を検出
+var g_bIsInternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+// 必要に応じて、Flash ムービーからの fscommand メッセージを処理し、
+// AICC Flash テンプレートコマンドを SCORM に再度マッピングします。
+//function THiNQplayer_DoFSCommand(command, args){
+function scormCommand(command, args){
+	//var THiNQplayerObj = g_bIsInternetExplorer ? THiNQplayer : document.THiNQplayer;
+	/// 使用可能な SCORM API がない場合には、処理しない
+	var myArgs = new String(args);
+	var cmd = new String(command);
+	var v = "";
+	var err = "true";
+	var arg1, arg2, n, s, i;
+	var sep = myArgs.indexOf(",");
+	if (sep > -1){
+		arg1 = myArgs.substr(0, sep); // API から取得するデータエレメント名
+		arg2 = myArgs.substr(sep+1);	// 設定する Flash ムービー変数名
+	} else {
+		arg1 = myArgs;
+	}
+	if (!APIOK()) return;
+	if (cmd.substring(0,3) == "LMS"){
+		// "LMSxxx" FScommands (fsSCORM html テンプレートとの互換性あり) を処理
+		if ( cmd == "LMSInitialize" ){
+			err = (APIOK() + "");
+			// 実際の LMSInitialize がテンプレートにより自動的に呼び出されます
+		}	else if ( cmd == "LMSSetValue" ){
+			err = SCOSetValue(arg1,arg2);
+		} else if ( cmd == "LMSFinish" ){
+			err = SCOFinish();
+			// テンプレートによる自動処理になっていますが、
+			// それ以前にムービーが呼び出すことがあります。
+		}	else if ( cmd == "LMSCommit" ){
+			err = SCOCommit();
+		}	else if ( cmd == "LMSFlush" ){
+			// 操作不能
+			// SCORM では定義されていないため、LMSFlush を呼び出すとテストスイートにエラーが生じます。
+		//}	else if ((arg2) && (arg2.length > 0)){
+		}else if ( cmd == "LMSGetValue") {
+			//if ( cmd == "LMSGetValue") {
+				//THiNQplayerObj.SetVariable(arg2, SCOGetValue(arg1));
+				err = SCOGetValue(arg1);
+			}else if ( cmd == "LMSGetLastError") {
+				//THiNQplayerObj.SetVariable(arg2, SCOGetLastError(arg1));
+				err = SCOGetLastError(arg1);
+			}else if ( cmd == "LMSGetErrorString") {
+				//THiNQplayerObj.SetVariable(arg2, SCOGetLastError(arg1));
+				err = SCOGetLastError(arg1);
+			}else if ( cmd == "LMSGetDiagnostic") {
+				//THiNQplayerObj.SetVariable(arg2, SCOGetDiagnostic(arg1));
+				err = SCOGetDiagnostic(arg1);
+			}else {
+				// 不明な LMSGetxxxx 拡張機能
+				v = eval('g_objAPI.' + cmd + '(\"' + arg1 + '\")');
+				//THiNQplayerObj.SetVariable(arg2,v);
+				err = v;
+			//}
+		//} else if (cmd.substring(0,3) == "LMSGet") {
+		//	err = "-2: No Flash variable specified"
+		}
+		// "LMSxxx" コマンドの処理の終わり
+	} else if ((cmd.substring(0,6) == "MM_cmi")||(cmd.substring(0,6) == "CMISet")) {
+		// Macromedia 学習コンポーネントの FScommands を処理します。
+		// これらは AICC HACP データモデル規則を使用しているため、
+		// 必要に応じて再度データを AICC から SCORM へマップしてください。
+		var F_intData = myArgs.split(";");
+		if (cmd == "MM_cmiSendInteractionInfo") {
+			n = SCOGetValue("cmi.interactions._count");
+			s = "cmi.interactions." + n + ".";
+			// SCORM 準拠テストに不適合とならないよう、大きいエラーをキャッチします。
+			// このインタラクションに ID が提供されない場合は、記録することができません
+			v = F_intData[2];
+			if ((v == null) || (v == "")) err = 201; // ID がない場合は、記録する意味がありません
+			if (err =="true"){
+				err = SCOSetValue(s + "id", v);
+			}
+			if (err =="true"){
+				var re = new RegExp("[{}]","g");
+				for (i=1; (i<9) && (err=="true"); i++){
+					v = F_intData[i];
+					if ((v == null) || (v == "")) continue;
+					if (i == 1){
+						err = SCOSetValue(s + "time", v);
+					} else if (i == 3){
+						err = SCOSetValue(s + "objectives.0.id", v);
+					} else if (i == 4){
+						err = SCOSetValue(s + "type", normalizeInteractionType(v));
+					} else if (i == 5){
+						// strip out "{" and "}" from response
+						v = v.replace(re, "");
+						err = SCOSetValue(s + "correct_responses.0.pattern", v);
+					} else if (i == 6){
+						// strip out "{" and "}" from response
+						v = v.replace(re, "");
+						err = SCOSetValue(s + "student_response", v);
+					} else if (i == 7){
+						err = SCOSetValue(s + "result", normalizeInteractionResult(v));
+					} else if (i == 8){
+						err = SCOSetValue(s + "weighting", v);
+					} else if (i == 9){
+						err = SCOSetValue(s + "latency", v);
+					}
+				}
+			}
+		} else if (cmd == "MM_cmiSendObjectiveInfo"){
+			err = SCOSetObjectiveData(F_intData[1], ".score.raw", F_intData[2]);
+			if (err=="true"){
+				SCOSetObjectiveData(F_intData[1], ".status", normalizeStatus(F_intData[3]));
+			}
+		} else if ((cmd=="CMISetScore") ||(cmd=="MM_cmiSendScore")){
+			err = SCOSetValue("cmi.core.score.raw", F_intData[0]);
+		} else if ((cmd=="CMISetStatus") || (cmd=="MM_cmiSetLessonStatus")){
+			err = SCOSetValue("cmi.core.lesson_status", normalizeStatus(F_intData[0]));
+		} else if (cmd=="CMISetTime"){
+			err = SCOSetValue("cmi.core.session_time", F_intData[0]);
+		} else if (cmd=="CMISetCompleted"){
+			err = SCOSetStatusCompleted();
+		} else if (cmd=="CMISetStarted"){
+			err = SCOSetValue("cmi.core.lesson_status", "incomplete");
+		} else if (cmd=="CMISetPassed"){
+			err = SCOSetValue("cmi.core.lesson_status", "passed");
+		} else if (cmd=="CMISetFailed"){
+			err = SCOSetValue("cmi.core.lesson_status", "failed");
+		} else if (cmd=="CMISetData"){
+			err = SCOSetValue("cmi.suspend_data", F_intData[0]);
+		} else if (cmd=="CMISetLocation"){
+			err = SCOSetValue("cmi.core.lesson_location", F_intData[0]);
+		} else if (cmd=="CMISetTimedOut"){
+			err = SCOSetValue("cmi.core.exit", "time-out");
+		} // その他の学習コンポーネントの FScommands はこのコンテキストでは操作不能です
+	} else {
+		if (cmd=="CMIFinish" || cmd=="CMIExitAU"){
+			err = SCOFinish();
+		} else if (cmd=="CMIInitialize" || cmd=="MM_StartSession"){
+			err = SCOInitialize();
+		} else {
+			// 不明のコマンド; API 拡張を呼び出す可能性あり
+			// コマンドが 2 つ目の引数を伴っている場合は、期待する値を仮定しておきます。
+			// それ以外の場合は、ただの cmd とみなしてください
+				if (eval('g_objAPI.' + cmd)) {
+				v = eval('g_objAPI.' + cmd + '(\"' + arg1 + '\")');
+				if ((arg2) && (arg2.length > 0)){
+					//THiNQplayerObj.SetVariable(arg2,v)
+					err = v;
+				} else {
+					err = v;
+				}
+			} else {
+				err = "false";
+			}
+		}
+	}
+	// コマンドの変換と処理の終了
+	// 検出されたエラー (LMS エラーの戻り値など) が処理されます
+	if ((g_bShowApiErrors) && (err != "true")) {
+		AlertUserOfAPIError(ExpandString(g_strFSAPIError, err, cmd, args));
+	}
+
+	return err
+}
+var scoFinish = false;
+//SCO完了メソッド
+function myFinish(){
+	//alert("myFinish");
+  if(scoFinish == false){
+	 scoFinish = true;
+      try{
+          scormPreFinish();
+      }catch(e){
+      }
+	 SCOFinish();
+  }
+}
+/*
+//window.addEventListener('load', SCOInitialize, false);
+window.addEventListener('unload', myFinish, false);
+window.addEventListener('beforeunload', myFinish, false);
+SCOInitialize();
+*/
+
+addEventListenerFunc('unload', myFinish);
+addEventListenerFunc('beforeunload', myFinish);
+
+function addEventListenerFunc(eventType, f){
+    if (window.addEventListener) { //for W3C DOM
+        window.addEventListener(eventType, f, false);
+    } else if (window.attachEvent) { //for IE
+        window.attachEvent("on" + eventType, f);
+    } else {
+        window["on" + eventType] = f;
+    }
+}
+
+function scoInitializeFromScormManager(){
+    SCOInitialize();
+}

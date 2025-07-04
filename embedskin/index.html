@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>総合案内_ベトナム語版_デジパン用</title>
+
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+    <script type="text/javascript" src="embedredirector.js"></script>
+
+    <style>
+        html,body {
+            height:100%;
+            margin: 0px;
+            padding: 0;
+
+            overflow: hidden;
+        }
+
+        div#flipper-app {
+            height: 100%;
+            font-size: 12px;
+
+            overflow: hidden;
+        }
+        div#flipper-component {
+        }
+        [v-cloak] { display:none }
+    </style>
+</head>
+<body>
+
+
+<div v-cloak id="flipper-app" bookpath="../" pageurl="false">
+    <div id="flipper-component" v-bind:style="{position: 'absolute',top:'0px',left: 5 + 'px',width: appWidth - 5 + 'px', height: appHeight - 20 - 5 + 'px'}">
+
+        <component v-bind:is="view" v-ref:view></component>
+    </div>
+
+</div>
+
+
+<div id="skin">
+    <img v-bind:src="zoominpng" v-on:click="zoomIn" v-bind:style="{position:'absolute',cursor:'pointer',bottom:'5px',right:appCenter+2+'px'}" alt="">
+    <img v-bind:src="zoomoutpng" v-on:click="zoomOut" v-bind:style="{position:'absolute',cursor:'pointer',bottom:'5px',left:appCenter+2+'px'}" alt="">
+    <img v-bind:src="fliprpng" v-on:click="flipR" v-bind:style="{position:'absolute',top:appMiddle + 'px',right:'5px',cursor:'pointer'}" alt="">
+    <img v-bind:src="fliplpng" v-on:click="flipL" v-bind:style="{position:'absolute',top:appMiddle + 'px',left:'5px',cursor:'pointer'}" alt="">
+    <img v-bind:src="jumpbackpng" v-on:click="backClick" v-bind:style="{cursor:'pointer',position:'absolute',bottom:'5px',right:'5px'}" alt="">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="../html5/js/flipper.js?c=20250703163053" charset="utf-8"></script>
+<script type="text/javascript" src="skin.js?c=20250703163053" charset="utf-8"></script>
+</body>
+</html>

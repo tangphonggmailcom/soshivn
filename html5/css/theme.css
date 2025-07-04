@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* css 5.0.13 Copyright (c) 2016 LOGOSWARE */
+
+/* Default
+----------------------------------- */
+
+.slidemenu .save-btn, .slidemenu .cancel-btn,
+.slidemenu-m .save-btn, .slidemenu-m .cancel-btn {
+  border: solid 1px #c6c6c6;
+}
+
+.slidemenu .segmented .segmented-btn,
+.slidemenu-m .segmented .segmented-btn {
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+}
+
+.slidemenu .segmented :first-child .segmented-btn,
+.slidemenu-m .segmented :first-child .segmented-btn {
+  border: 1px solid #ffffff;
+}
+
+.slidemenu .segmented :first-child .segmented-btn,
+.slidemenu .segmented :first-child .segmented-btn .btn,
+.slidemenu-m .segmented :first-child .segmented-btn,
+.slidemenu-m .segmented :first-child .segmented-btn .btn {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.slidemenu .segmented :last-child .segmented-btn,
+.slidemenu .segmented :last-child .segmented-btn .btn,
+.slidemenu-m .segmented :last-child .segmented-btn,
+.slidemenu-m .segmented :last-child .segmented-btn .btn {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.delete-btn, .all-delete-btn {
+  background-color: #e82833;
+}
+
+.delete-btn.hover, .all-delete-btn.hover {
+  background-color: #ac171d;
+}
+
+.delete-btn.active, .all-delete-btn.active {
+  background-color: #780b11;
+}
+
+.delete-btn.disabled, .all-delete-btn.disabled {
+  background-color: #e79096;
+  cursor: default;
+}
+

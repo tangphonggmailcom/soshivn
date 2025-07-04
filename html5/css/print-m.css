@@ -1,0 +1,17 @@
+/* css 5.0.13 Copyright (c) 2016 LOGOSWARE */
+.noprintpage {
+  display: none !important;
+}
+
+#carousel, #slide {
+  display: none !important;
+}
+
+#print-message {
+  display: block !important;
+  position: absolute !important;
+  text-align: center !important;
+  top: 50% !important;
+  width: 100% !important;
+  white-space: pre !important;
+}
